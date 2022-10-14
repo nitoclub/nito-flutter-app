@@ -1,0 +1,13 @@
+name: nito
+
+packages:
+  - core/**
+  - data/**
+  - feature/**
+  - frontend
+
+sdk_path: .fvm/flutter_sdk
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
