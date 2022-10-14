@@ -1,4 +1,4 @@
-name: message
+name: data_message
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -10,6 +10,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  core:
+    path: ../../core/common
+  core_model:
+    path: ../../core/model
+  core_network:
+    path: ../../core/network
 
 dev_dependencies:
   flutter_test:

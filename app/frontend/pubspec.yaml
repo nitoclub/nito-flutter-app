@@ -14,6 +14,10 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  feature_schedule:
+    path: ../feature/schedule
+  feature_top:
+    path: ../feature/top
 
 dev_dependencies:
   flutter_test:

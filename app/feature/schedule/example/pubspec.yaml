@@ -1,4 +1,4 @@
-name: schedule_example
+name: feature_schedule_example
 description: Demonstrates how to use the schedule plugin.
 
 # The following line prevents the package from being accidentally published to
@@ -18,7 +18,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  schedule:
+  feature_schedule:
     # When depending on this package from a real application you should use:
     #   schedule: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints

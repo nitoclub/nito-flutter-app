@@ -1,2 +1,5 @@
 # fvm
 .fvm/flutter_sdk
+
+# melos
+**/pubspec_overrides.yaml

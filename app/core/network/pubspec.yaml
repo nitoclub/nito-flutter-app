@@ -1,4 +1,4 @@
-name: network
+name: core_network
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  core:
+    path: ../common
 
 dev_dependencies:
   flutter_test:

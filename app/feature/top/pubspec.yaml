@@ -1,4 +1,4 @@
-name: top
+name: feature_top
 description: A new Flutter plugin project.
 version: 0.0.1
 homepage:
@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
+  data_schedule:
+    path: ../../data/schedule
 
 dev_dependencies:
   flutter_test:
