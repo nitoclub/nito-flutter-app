@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:top/top.dart';
-import 'package:top/top_platform_interface.dart';
-import 'package:top/top_method_channel.dart';
+import 'package:feature_top/top.dart';
+import 'package:feature_top/top_platform_interface.dart';
+import 'package:feature_top/top_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockTopPlatform
