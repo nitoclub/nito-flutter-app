@@ -18,6 +18,7 @@ dependencies:
     path: ../feature/schedule
   feature_top:
     path: ../feature/top
+  supabase_flutter: ^0.3.3
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,7 @@
+# flutter
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
 # fvm
 .fvm/flutter_sdk
 
