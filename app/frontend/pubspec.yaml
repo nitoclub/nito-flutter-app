@@ -19,6 +19,7 @@ dependencies:
   feature_top:
     path: ../feature/top
   supabase_flutter: ^0.3.3
+  go_router: ^5.1.0
 
 dev_dependencies:
   flutter_test:
