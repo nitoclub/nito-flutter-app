@@ -1,3 +1,9 @@
+PACKAGE_ROOT = .
+PACKAGE_NAME = new_package
+
+PLUGIN_ROOT = .
+PLUGIN_NAME = new_plugin
+
 .DEFAULT_GOAL := help
 
 .PHONY: help
@@ -15,3 +21,11 @@ prepare: # Prepare project development
 .PHONY: melos-bs
 melos-bs: # Run melos bootstrap
 	./scripts/melos-bs.sh
+
+.PHONY: flutter-create-package
+flutter-create-package: # Create a Flutter package
+	./scripts/flutter-create-package.sh ${PACKAGE_NAME} ${PACKAGE_ROOT}
+
+.PHONY: flutter-create-plugin
+flutter-create-plugin: # Create a Flutter plugin
+	./scripts/flutter-create-plugin.sh ${PLUGIN_NAME} ${PLUGIN_ROOT}
