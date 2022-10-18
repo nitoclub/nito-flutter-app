@@ -1,5 +1,5 @@
-name: core
-description: A new Flutter package project.
+name: nito_core
+description: NITO の共通系パッケージ
 version: 0.0.1
 homepage: none
 publish_to: none

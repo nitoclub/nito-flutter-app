@@ -1,5 +1,5 @@
-name: feature_auth
-description: A new Flutter plugin project.
+name: nito_feature_auth
+description: NITO の認証画面に関する機能パッケージ
 version: 0.0.1
 homepage: none
 publish_to: none

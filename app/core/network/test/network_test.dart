@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:core_network/network.dart';
+import 'package:nito_network/network.dart';
 
 void main() {
   test('adds one to input values', () {

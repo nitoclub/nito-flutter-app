@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:feature_auth/auth.dart';
+import 'package:nito_feature_auth/auth.dart';
 
 void main() {
   runApp(const LoginPageTest());

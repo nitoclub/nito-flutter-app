@@ -1,5 +1,5 @@
-name: data_schedule
-description: A new Flutter package project.
+name: nito_data_schedule
+description: NITO のスケジュールに関するデータ操作パッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
@@ -11,11 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core:
+  nito_core:
     path: ../../core/common
-  core_model:
+  nito_model:
     path: ../../core/model
-  core_network:
+  nito_network:
     path: ../../core/network
   supabase_flutter: ^0.3.3
 

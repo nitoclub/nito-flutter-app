@@ -1,5 +1,5 @@
-name: core_model
-description: A new Flutter package project.
+name: nito_model
+description: NITO のドメインモデルパッケージ
 version: 0.0.1
 homepage: none
 publish_to: none

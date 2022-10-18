@@ -1,4 +1,4 @@
-name: feature_auth_example
+name: nito_feature_auth_example
 description: Demonstrates how to use the auth plugin.
 
 # The following line prevents the package from being accidentally published to
@@ -18,7 +18,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  feature_auth:
+  nito_feature_auth:
     # When depending on this package from a real application you should use:
     #   auth: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints

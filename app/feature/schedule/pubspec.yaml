@@ -1,5 +1,5 @@
-name: feature_schedule
-description: A new Flutter plugin project.
+name: nito_feature_schedule
+description: NITO のスケジュール画面に関する機能パッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  data_schedule:
+  nito_data_schedule:
     path: ../../data/schedule
 
 dev_dependencies:

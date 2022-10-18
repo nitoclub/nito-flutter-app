@@ -36,27 +36,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
-  core:
-    dependency: "direct overridden"
-    description:
-      path: "../../../core/common"
-      relative: true
-    source: path
-    version: "0.0.1"
-  core_model:
-    dependency: "direct overridden"
-    description:
-      path: "../../../core/model"
-      relative: true
-    source: path
-    version: "0.0.1"
-  core_network:
-    dependency: "direct overridden"
-    description:
-      path: "../../../core/network"
-      relative: true
-    source: path
-    version: "0.0.1"
   crypto:
     dependency: transitive
     description:
@@ -71,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  data_schedule:
-    dependency: "direct overridden"
-    description:
-      path: "../../../data/schedule"
-      relative: true
-    source: path
-    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -85,13 +57,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.1"
-  feature_top:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   ffi:
     dependency: transitive
     description:
@@ -219,6 +184,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  nito_core:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/common"
+      relative: true
+    source: path
+    version: "0.0.1"
+  nito_data_schedule:
+    dependency: "direct overridden"
+    description:
+      path: "../../../data/schedule"
+      relative: true
+    source: path
+    version: "0.0.1"
+  nito_feature_top:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
+  nito_model:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/model"
+      relative: true
+    source: path
+    version: "0.0.1"
+  nito_network:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/network"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

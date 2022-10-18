@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:feature_schedule/schedule.dart';
+import 'package:nito_feature_schedule/schedule.dart';
 
 void main() {
   runApp(const MyApp());

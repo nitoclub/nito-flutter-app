@@ -1,5 +1,5 @@
-name: app
-description: A new Flutter project.
+name: nito_frontend
+description: NITO のフロントエンドアプリケーション
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
@@ -17,9 +17,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_dotenv: ^5.0.2
-  feature_schedule:
+  nito_feature_schedule:
     path: ../feature/schedule
-  feature_top:
+  nito_feature_top:
     path: ../feature/top
   supabase_flutter: ^0.3.3
   go_router: ^5.1.0

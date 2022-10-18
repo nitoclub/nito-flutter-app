@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:data_message/message.dart';
+import 'package:nito_data_message/message.dart';
 
 void main() {
   test('adds one to input values', () {

@@ -1,5 +1,5 @@
-name: core_network
-description: A new Flutter package project.
+name: nito_network
+description: NITO のネットワークパッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core:
+  nito_core:
     path: ../common
   supabase_flutter: ^0.3.3
 

@@ -1,4 +1,4 @@
-import 'package:app/src/utils/url_strategy.dart';
+import 'package:nito_frontend/src/utils/url_strategy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
