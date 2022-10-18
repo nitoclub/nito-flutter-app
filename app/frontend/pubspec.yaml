@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_dotenv: ^5.0.2
   feature_schedule:
     path: ../feature/schedule
   feature_top:
@@ -38,3 +39,4 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - .env
