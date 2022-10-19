@@ -17,7 +17,7 @@ dependencies:
     path: ../../core/model
   nito_network:
     path: ../../core/network
-  supabase_flutter: ^0.3.3
+  supabase_flutter: ^1.0.0
 
 dev_dependencies:
   flutter_test:
