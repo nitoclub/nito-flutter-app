@@ -17,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_dotenv: ^5.0.2
+  hooks_riverpod: ^2.0.2
   nito_feature_schedule:
     path: ../feature/schedule
   nito_feature_top:
