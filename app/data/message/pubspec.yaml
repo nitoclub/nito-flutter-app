@@ -18,6 +18,7 @@ dependencies:
   nito_network:
     path: ../../core/network
   supabase_flutter: ^1.0.0
+  hooks_riverpod: ^2.0.2
 
 dev_dependencies:
   flutter_test:
