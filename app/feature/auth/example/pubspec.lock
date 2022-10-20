@@ -82,7 +82,7 @@ packages:
     source: sdk
     version: "0.0.0"
   hooks_riverpod:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"

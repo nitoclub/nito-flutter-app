@@ -16,6 +16,7 @@ dependencies:
     path: ../../data/schedule
   nito_feature_core:
     path: ../core
+  hooks_riverpod: ^2.0.2
 
 dev_dependencies:
   flutter_test:
