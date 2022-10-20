@@ -1,5 +1,5 @@
-name: nito_feature_top
-description: NITO のトップ画面に関する機能パッケージ
+name: nito_feature_core
+description: NITO の機能系共通パッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
@@ -12,10 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  nito_data_schedule:
-    path: ../../data/schedule
-  nito_feature_core:
-    path: ../core
 
 dev_dependencies:
   flutter_test:

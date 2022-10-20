@@ -14,6 +14,8 @@ dependencies:
   plugin_platform_interface: ^2.0.2
   nito_data_schedule:
     path: ../../data/schedule
+  nito_feature_core:
+    path: ../core
 
 dev_dependencies:
   flutter_test:

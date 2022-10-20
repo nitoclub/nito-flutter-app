@@ -259,6 +259,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  nito_feature_core:
+    dependency: "direct overridden"
+    description:
+      path: "../feature/core"
+      relative: true
+    source: path
+    version: "0.0.1"
   nito_feature_schedule:
     dependency: "direct main"
     description:
