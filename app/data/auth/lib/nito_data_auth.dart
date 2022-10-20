@@ -1,7 +1,6 @@
 library nito_data_auth;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/auth_repository.dart';
+export 'src/fake_auth_repository.dart';
+
+export 'src/di/auth_repository_provider.dart';
