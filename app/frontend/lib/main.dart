@@ -24,8 +24,8 @@ void main() async {
 
   // Supabase の初期化
   await Supabase.initialize(
-    url: dotenv.env['SUPABASE_URL'],
-    anonKey: dotenv.env['SUPABASE_ANON_KEY'],
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
 
   // Run the app and pass in the SettingsController. The app listens to the
