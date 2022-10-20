@@ -15,4 +15,4 @@ cd "$PLUGIN_ROOT" || exit
 
 # Flutter のプラグインを作成
 PLUGIN_NAME=$1
-fvm flutter create --template=plugin "$PLUGIN_NAME" --platforms android,ios,web,macos,windows
+fvm flutter create --template=plugin "$PLUGIN_NAME"
