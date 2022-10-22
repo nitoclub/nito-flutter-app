@@ -6,28 +6,43 @@ name: Deploy to Firebase Hosting on PR
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs-on: ubuntu-latest
+    runs-on: macos-12
+
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
 
-      - name: Install Flutter
-        run: git clone https://github.com/flutter/flutter.git
-
-      - name: Add path
-        run: echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
-
-      - name: Download Flutter packages
-        run: cd app/ && flutter pub get
-
-      - name: Create .env
+      # Homebrew がインストールされているため brew で fvm をインストール
+      # https://github.com/actions/runner-images/blob/main/images/macos/macos-12-Readme.md
+      - name: install fvm
         run: |
-          cd app/ && touch .env
+          brew tap leoafarias/fvm
+          brew install fvm
+
+      # Melos をインストール
+      - name: install melos
+        run: dart pub global activate melos
+
+      # 指定されたバージョンの Flutter をインストール
+      - name: setup flutter
+        run: cd app/ && fvm install
+
+      # 依存パッケージを解決
+      - name: download flutter packages
+        run: make melos-bs
+
+      # 本番環境用の .env を作成
+      - name: create .env
+        run: |
+          cd app/frontend && touch .env
           echo SUPABASE_URL=${{secrets.SUPABASE_URL}} >> .env
           echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
 
-      - name: Build
-        run: cd app/ && flutter build web
+      # Web ビルドを実行
+      - name: web build
+        run: cd app/frontend && fvm flutter build web
 
+      # Firebase Hosting にデプロイ
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

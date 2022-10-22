@@ -1,10 +1,13 @@
 {
   "hosting": {
-    "public": "app/build/web",
+    "public": "app/frontend/build/web",
     "ignore": [
       "firebase.json",
-      "**/.last_build_id",
-      "**/node_modules/**"
+      ".github/",
+      "scripts/",
+      "supabase/",
+      "tools/",
+      "**/.last_build_id"
     ]
   },
   "rewrites": [
