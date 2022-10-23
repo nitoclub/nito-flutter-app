@@ -8,12 +8,12 @@
       "supabase/",
       "tools/",
       "**/.last_build_id"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
-  },
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/index.html"
-    }
-  ]
+  }
 }
