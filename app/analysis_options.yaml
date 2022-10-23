@@ -3,3 +3,7 @@ include: lint_rules.yaml
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  errors:
+    implementation_imports: error
