@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
+  nito_styleguide:
+    path: ../../core/styleguide
   nito_data_schedule:
     path: ../../data/schedule
   nito_feature_core:

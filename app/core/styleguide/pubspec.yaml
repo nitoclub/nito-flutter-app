@@ -1,5 +1,5 @@
-name: nito_feature_auth
-description: NITO の認証画面に関する機能パッケージ
+name: nito_styleguide
+description: NITO のコンポーネントスタイルガイドパッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
@@ -11,14 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hooks_riverpod: ^2.0.2
   plugin_platform_interface: ^2.0.2
-  nito_styleguide:
-    path: ../../core/styleguide
-  nito_data_auth:
-    path: ../../data/auth
-  nito_feature_core:
-    path: ../core
+  nito_core:
+    path: ../common
 
 dev_dependencies:
   flutter_test:

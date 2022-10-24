@@ -282,6 +282,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  nito_styleguide:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/styleguide"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:
