@@ -275,6 +275,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  nito_network:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/network"
+      relative: true
+    source: path
+    version: "0.0.1"
   nito_styleguide:
     dependency: "direct overridden"
     description:
