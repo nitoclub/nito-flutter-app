@@ -24,6 +24,8 @@ dependencies:
     path: ../feature/top
   nito_feature_auth:
     path: ../feature/auth
+  nito_feature_core:
+    path: ../feature/core
   supabase_flutter: ^1.0.0
   go_router: ^5.1.0
 

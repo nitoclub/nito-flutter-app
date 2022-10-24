@@ -295,7 +295,7 @@ packages:
     source: path
     version: "0.0.1"
   nito_feature_core:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../feature/core"
       relative: true
