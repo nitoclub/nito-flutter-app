@@ -7,6 +7,9 @@ class RealAuthenticator implements Authenticator {
   RealAuthenticator({required GoTrueClient client}) : _client = client;
 
   @override
+  Stream<AuthState> get onAuthStateChange => _client.onAuthStateChange;
+
+  @override
   Future<AuthResponse> signIn({
     required String email,
     required String password,
