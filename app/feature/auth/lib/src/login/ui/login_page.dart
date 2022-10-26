@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nito_styleguide/nito_styleguide.dart';
 
 class LoginPage extends HookConsumerWidget {
   const LoginPage({super.key});
@@ -11,7 +12,7 @@ class LoginPage extends HookConsumerWidget {
         title: const Text('Welcome to Nito'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(Space.x3),
         child: Column(
           children: [
             TextFormField(
@@ -39,7 +40,7 @@ class LoginPage extends HookConsumerWidget {
               ),
               // controller: plz, create a textEditing controller,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: Space.x3),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
