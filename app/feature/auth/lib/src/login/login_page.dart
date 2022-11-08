@@ -14,10 +14,10 @@ class LoginPage extends HookConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Sign In')),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
+        padding: const EdgeInsets.all(Space.x3),
         children: [
           const Text('管理アプリはログインが必要です。'),
-          const SizedBox(height: 16),
+          const NitoGap.heightX3(),
           TextFormField(
             controller: controller.emailController,
             decoration: const InputDecoration(
@@ -28,7 +28,7 @@ class LoginPage extends HookConsumerWidget {
             autofocus: true,
             textInputAction: TextInputAction.next,
           ),
-          const SizedBox(height: 8),
+          const NitoGap.heightX2(),
           TextFormField(
             controller: controller.passwordController,
             decoration: const InputDecoration(
@@ -42,7 +42,7 @@ class LoginPage extends HookConsumerWidget {
               state.isLoading ? null : await controller.login();
             },
           ),
-          const SizedBox(height: 32),
+          const NitoGap.heightX4(),
           ElevatedButton(
             onPressed: () async {
               state.isLoading ? null : controller.login();
