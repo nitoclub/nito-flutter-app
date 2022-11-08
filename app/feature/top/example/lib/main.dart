@@ -3,11 +3,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nito_feature_top/top.dart';
 
 void main() {
-  runApp(const LoginPageTest());
+  runApp(const TopPageTest());
 }
 
-class LoginPageTest extends HookConsumerWidget{
-  const LoginPageTest({super.key});
+class TopPageTest extends HookConsumerWidget{
+  const TopPageTest({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
