@@ -22,6 +22,10 @@ prepare: # Prepare project development
 melos-bs: # Run melos bootstrap
 	./scripts/melos-bs.sh
 
+.PHONY: melos-feature-buildrunner-build
+melos-feature-buildrunner-build: # Run melos feature-buildrunner-build
+	./scripts/melos-feature-buildrunner-build.sh
+
 .PHONY: flutter-create-package
 flutter-create-package: # Create a Flutter package
 	./scripts/flutter-create-package.sh ${PACKAGE_NAME} ${PACKAGE_ROOT}
