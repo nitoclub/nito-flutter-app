@@ -22,7 +22,7 @@ class LoginPage extends HookConsumerWidget {
             controller: controller.emailController,
             decoration: const InputDecoration(
               labelText: 'Email',
-              icon: Icon(Icons.email_outlined),
+              icon: Icon(NitoIcons.email),
             ),
             keyboardType: TextInputType.emailAddress,
             autofocus: true,
@@ -33,7 +33,7 @@ class LoginPage extends HookConsumerWidget {
             controller: controller.passwordController,
             decoration: const InputDecoration(
               labelText: 'Password',
-              icon: Icon(Icons.password_outlined),
+              icon: Icon(NitoIcons.password),
             ),
             keyboardType: TextInputType.visiblePassword,
             obscureText: true,
