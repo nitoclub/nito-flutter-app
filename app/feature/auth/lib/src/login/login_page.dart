@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nito_feature_auth/src/login_page/controllers/login_page_controller.dart';
+import 'package:nito_feature_auth/src/login/login_page_controller.dart';
 import 'package:nito_styleguide/nito_styleguide.dart';
 
 class LoginPage extends HookConsumerWidget {
