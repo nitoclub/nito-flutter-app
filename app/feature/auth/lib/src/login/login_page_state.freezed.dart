@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$LoginPageState {
   String get errorMessage => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoginProcessing => throw _privateConstructorUsedError;
   bool get isLogin => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ abstract class $LoginPageStateCopyWith<$Res> {
           LoginPageState value, $Res Function(LoginPageState) then) =
       _$LoginPageStateCopyWithImpl<$Res, LoginPageState>;
   @useResult
-  $Res call({String errorMessage, bool isLoading, bool isLogin});
+  $Res call({String errorMessage, bool isLoginProcessing, bool isLogin});
 }
 
 /// @nodoc
@@ -48,7 +48,7 @@ class _$LoginPageStateCopyWithImpl<$Res, $Val extends LoginPageState>
   @override
   $Res call({
     Object? errorMessage = null,
-    Object? isLoading = null,
+    Object? isLoginProcessing = null,
     Object? isLogin = null,
   }) {
     return _then(_value.copyWith(
@@ -56,9 +56,9 @@ class _$LoginPageStateCopyWithImpl<$Res, $Val extends LoginPageState>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isLoginProcessing: null == isLoginProcessing
+          ? _value.isLoginProcessing
+          : isLoginProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
       isLogin: null == isLogin
           ? _value.isLogin
@@ -76,7 +76,7 @@ abstract class _$$_LoginPageStateCopyWith<$Res>
       __$$_LoginPageStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String errorMessage, bool isLoading, bool isLogin});
+  $Res call({String errorMessage, bool isLoginProcessing, bool isLogin});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_LoginPageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? errorMessage = null,
-    Object? isLoading = null,
+    Object? isLoginProcessing = null,
     Object? isLogin = null,
   }) {
     return _then(_$_LoginPageState(
@@ -99,9 +99,9 @@ class __$$_LoginPageStateCopyWithImpl<$Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isLoginProcessing: null == isLoginProcessing
+          ? _value.isLoginProcessing
+          : isLoginProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
       isLogin: null == isLogin
           ? _value.isLogin
@@ -115,21 +115,23 @@ class __$$_LoginPageStateCopyWithImpl<$Res>
 
 class _$_LoginPageState implements _LoginPageState {
   const _$_LoginPageState(
-      {this.errorMessage = '', this.isLoading = false, this.isLogin = false});
+      {this.errorMessage = '',
+      this.isLoginProcessing = false,
+      this.isLogin = false});
 
   @override
   @JsonKey()
   final String errorMessage;
   @override
   @JsonKey()
-  final bool isLoading;
+  final bool isLoginProcessing;
   @override
   @JsonKey()
   final bool isLogin;
 
   @override
   String toString() {
-    return 'LoginPageState(errorMessage: $errorMessage, isLoading: $isLoading, isLogin: $isLogin)';
+    return 'LoginPageState(errorMessage: $errorMessage, isLoginProcessing: $isLoginProcessing, isLogin: $isLogin)';
   }
 
   @override
@@ -139,14 +141,14 @@ class _$_LoginPageState implements _LoginPageState {
             other is _$_LoginPageState &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            (identical(other.isLoginProcessing, isLoginProcessing) ||
+                other.isLoginProcessing == isLoginProcessing) &&
             (identical(other.isLogin, isLogin) || other.isLogin == isLogin));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, errorMessage, isLoading, isLogin);
+      Object.hash(runtimeType, errorMessage, isLoginProcessing, isLogin);
 
   @JsonKey(ignore: true)
   @override
@@ -158,13 +160,13 @@ class _$_LoginPageState implements _LoginPageState {
 abstract class _LoginPageState implements LoginPageState {
   const factory _LoginPageState(
       {final String errorMessage,
-      final bool isLoading,
+      final bool isLoginProcessing,
       final bool isLogin}) = _$_LoginPageState;
 
   @override
   String get errorMessage;
   @override
-  bool get isLoading;
+  bool get isLoginProcessing;
   @override
   bool get isLogin;
   @override

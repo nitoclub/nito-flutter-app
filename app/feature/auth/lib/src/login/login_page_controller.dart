@@ -5,29 +5,45 @@ import 'package:nito_data_auth/nito_data_auth.dart';
 
 final loginPageController =
     StateNotifierProvider<LoginPageController, LoginPageState>(
-  (ref) => LoginPageController(ref),
+  (ref) => LoginPageController(
+    ref.read(authRepositoryProvider),
+  ),
 );
 
 class LoginPageController extends StateNotifier<LoginPageState> {
-  LoginPageController(this.ref) : super(const LoginPageState()) {
-    emailController = TextEditingController(text: '');
-    passwordController = TextEditingController(text: '');
+  LoginPageController(this._authRepository)
+      : emailController = TextEditingController(text: ''),
+        passwordController = TextEditingController(text: ''),
+        super(const LoginPageState());
+
+  final AuthRepository _authRepository;
+
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+
+  void onPasswordFieldSubmitted() {
+    if (!state.isLoginProcessing) {
+      _login();
+    }
   }
 
-  final Ref ref;
-  late final TextEditingController emailController;
-  late final TextEditingController passwordController;
+  void onSignInButtonPressed() {
+    if (!state.isLoginProcessing) {
+      _login();
+    }
+  }
 
-  Future<void> login() async {
-    state = state.copyWith(isLoading: true);
+  Future<void> _login() async {
+    state = state.copyWith(isLoginProcessing: true);
 
     state = state.copyWith(
-      isLogin: await ref
-          .watch(authRepositoryProvider)
-          .signIn(emailController.text, passwordController.text),
+      isLogin: await _authRepository.signIn(
+        emailController.text,
+        passwordController.text,
+      ),
     );
 
-    state = state.copyWith(isLoading: false);
+    state = state.copyWith(isLoginProcessing: false);
   }
 
   @override

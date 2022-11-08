@@ -6,7 +6,7 @@ part 'login_page_state.freezed.dart';
 class LoginPageState with _$LoginPageState {
   const factory LoginPageState({
     @Default('') String errorMessage,
-    @Default(false) bool isLoading,
+    @Default(false) bool isLoginProcessing,
     @Default(false) bool isLogin,
   }) = _LoginPageState;
 }

@@ -13,15 +13,11 @@ class LoginPage extends HookConsumerWidget {
     final controller = ref.watch(loginPageController.notifier);
 
     return _StatelessLoginPage(
-      isSignInProcessing: state.isLoading,
+      isSignInProcessing: state.isLoginProcessing,
       emailController: controller.emailController,
       passwordController: controller.passwordController,
-      onPasswordFieldSubmitted: () async {
-        state.isLoading ? null : await controller.login();
-      },
-      onSignInButtonPressed: () async {
-        state.isLoading ? null : await controller.login();
-      },
+      onPasswordFieldSubmitted: controller.onPasswordFieldSubmitted,
+      onSignInButtonPressed: controller.onSignInButtonPressed,
     );
   }
 }
