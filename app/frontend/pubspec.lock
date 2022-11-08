@@ -407,7 +407,7 @@ packages:
     source: path
     version: "0.0.1"
   nito_network:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core/network"
       relative: true
