@@ -12,23 +12,50 @@ class LoginPage extends HookConsumerWidget {
     final state = ref.watch(loginPageController);
     final controller = ref.watch(loginPageController.notifier);
 
+    return _StatelessLoginPage(
+      isSignInProcessing: state.isLoading,
+      emailController: controller.emailController,
+      passwordController: controller.passwordController,
+      onPasswordFieldSubmitted: () async {
+        state.isLoading ? null : await controller.login();
+      },
+      onSignInButtonPressed: () async {
+        state.isLoading ? null : await controller.login();
+      },
+    );
+  }
+}
+
+class _StatelessLoginPage extends StatelessWidget {
+  const _StatelessLoginPage({
+    required this.isSignInProcessing,
+    required this.emailController,
+    required this.passwordController,
+    required this.onPasswordFieldSubmitted,
+    required this.onSignInButtonPressed,
+  });
+
+  final bool isSignInProcessing;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final void Function() onPasswordFieldSubmitted;
+  final void Function() onSignInButtonPressed;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sign In')),
+      appBar: AppBar(title: const Text('サインイン')),
       body: ListView(
         padding: const EdgeInsets.all(Space.x3),
         children: [
-          const Text('管理アプリはログインが必要です。'),
+          const Text('NITO はログインが必要です。'),
           const NitoGap.heightX3(),
           LoginForm(
-            isSignInProcessing: state.isLoading,
-            emailController: controller.emailController,
-            passwordController: controller.passwordController,
-            onPasswordFieldSubmitted: () async {
-              state.isLoading ? null : await controller.login();
-            },
-            onSignInButtonPressed: () async {
-              state.isLoading ? null : await controller.login();
-            },
+            isSignInProcessing: isSignInProcessing,
+            emailController: emailController,
+            passwordController: passwordController,
+            onPasswordFieldSubmitted: onPasswordFieldSubmitted,
+            onSignInButtonPressed: onSignInButtonPressed,
           ),
         ],
       ),
