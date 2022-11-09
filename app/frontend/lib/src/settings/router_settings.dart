@@ -10,11 +10,9 @@ final routerProvider = Provider<GoRouter>(
       GoRoute(
         path: '/',
         redirect: (context, state) {
-          var isSignedIn = false;
-          ref.watch(authenticatorProvider).onAuthStateChange.listen((event) {
-            isSignedIn = event.session != null;
-          });
-          return isSignedIn ? '/top' : '/login';
+          return (ref.watch(isSignedInProvider).value ?? false)
+              ? '/top'
+              : '/login';
         },
       ),
       GoRoute(
