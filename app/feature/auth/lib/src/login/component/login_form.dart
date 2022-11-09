@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nito_styleguide/nito_styleguide.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
     super.key,
+    required this.isSuccessSignIn,
     required this.isSignInProcessing,
     required this.emailController,
     required this.passwordController,
@@ -11,6 +13,7 @@ class LoginForm extends StatelessWidget {
     required this.onSignInButtonPressed,
   });
 
+  final bool isSuccessSignIn;
   final bool isSignInProcessing;
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -45,7 +48,10 @@ class LoginForm extends StatelessWidget {
           keyboardType: TextInputType.visiblePassword,
           obscureText: true,
           textInputAction: TextInputAction.done,
-          onFieldSubmitted: (String? value) => onPasswordFieldSubmitted(),
+          onFieldSubmitted: (String? value) {
+            onPasswordFieldSubmitted();
+            isSuccessSignIn ? context.go('/top') : null;
+          },
         ),
 
         const NitoGap.heightX4(),
@@ -54,7 +60,10 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => onSignInButtonPressed(),
+            onPressed: () {
+              onSignInButtonPressed();
+              isSuccessSignIn ? context.go('/top') : null;
+            },
             child: Text(isSignInProcessing ? 'サインイン中です…' : 'サインイン'),
           ),
         ),

@@ -13,6 +13,7 @@ class LoginPage extends HookConsumerWidget {
     final controller = ref.watch(loginPageController.notifier);
 
     return _StatelessLoginPage(
+      isSuccessSignIn: state.isLogin,
       isSignInProcessing: state.isLoginProcessing,
       emailController: controller.emailController,
       passwordController: controller.passwordController,
@@ -24,6 +25,7 @@ class LoginPage extends HookConsumerWidget {
 
 class _StatelessLoginPage extends StatelessWidget {
   const _StatelessLoginPage({
+    required this.isSuccessSignIn,
     required this.isSignInProcessing,
     required this.emailController,
     required this.passwordController,
@@ -31,6 +33,7 @@ class _StatelessLoginPage extends StatelessWidget {
     required this.onSignInButtonPressed,
   });
 
+  final bool isSuccessSignIn;
   final bool isSignInProcessing;
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -47,6 +50,7 @@ class _StatelessLoginPage extends StatelessWidget {
           const Text('NITO はログインが必要です。'),
           const NitoGap.heightX3(),
           LoginForm(
+            isSuccessSignIn: isSuccessSignIn,
             isSignInProcessing: isSignInProcessing,
             emailController: emailController,
             passwordController: passwordController,

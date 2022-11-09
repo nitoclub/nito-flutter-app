@@ -41,9 +41,8 @@ class LoginPageController extends StateNotifier<LoginPageState> {
         emailController.text,
         passwordController.text,
       ),
+      isLoginProcessing: false,
     );
-
-    state = state.copyWith(isLoginProcessing: false);
   }
 
   @override

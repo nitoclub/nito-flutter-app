@@ -231,6 +231,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  go_router:
+    dependency: transitive
+    description:
+      name: go_router
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.5"
   gotrue:
     dependency: transitive
     description:
@@ -707,4 +714,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.18.2 <3.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=3.3.0"
