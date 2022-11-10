@@ -1,0 +1,42 @@
+name: Feature request
+description: 機能要望を出す
+title: "[FR]: "
+labels: [ "enhancement", "triage me" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        この度は、バグレポートにご協力いただき、ありがとうございました。
+
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for this feature request.
+      options:
+        - label: I have searched the existing issues
+          required: true
+
+  - type: textarea
+    id: describe-problem
+    attributes:
+      label: 問題を説明する
+      description: 機能要望は問題に関連するものですか？説明してください。
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 解決策を説明する
+      description: ご希望の解決策をご記入ください。起こしてほしいことを明確に、簡潔に説明してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 追加コンテキスト
+      description: 機能リクエストに関する他のコンテキストやスクリーンショットをここに追加してください。
+    validations:
+      required: false
