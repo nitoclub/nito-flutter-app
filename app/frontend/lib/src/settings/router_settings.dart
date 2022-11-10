@@ -8,6 +8,13 @@ final routerProvider = Provider<GoRouter>(
   (ref) => GoRouter(
     routes: [
       GoRoute(
+        path: '/',
+        redirect: (context, state) {
+          // topにリダイレクトする
+          return '/top';
+        },
+      ),
+      GoRoute(
         path: '/login',
         builder: (context, state) => const LoginPage(),
       ),
@@ -23,7 +30,10 @@ final routerProvider = Provider<GoRouter>(
       // ),
     ],
     redirect: (context, state) {
-      return ref.watch(userProvider) != null ? state.path : '/login';
+      // ルートもしくはログインページへのアクセスはそのまま
+      if (state.location == '/' || state.location == '/login') return null;
+      // セッションがない場合、ログインページへリダイレクトされる。
+      return ref.watch(userProvider) != null ? null : '/login';
     },
   ),
 );
