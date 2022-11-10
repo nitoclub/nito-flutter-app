@@ -14,12 +14,16 @@ final rp.Provider<GoTrueClient> goTrueClientProvider = rp.Provider(
   (ref) => ref.watch(supabaseClientProvider).auth,
 );
 
+/// User?
+final rp.Provider<User?> userProvider =
+    rp.Provider((ref) => ref.watch(goTrueClientProvider).currentUser);
+
 /// AuthState
 final rp.StreamProvider<AuthState> authStateProvider = rp.StreamProvider(
   (ref) => ref.watch(goTrueClientProvider).onAuthStateChange,
 );
 
-/// IsSignedIn
+/// AsyncValue<bool>
 final rp.Provider<AsyncValue<bool>> isSignedInProvider = rp.Provider(
   (ref) => ref
       .watch(authStateProvider)

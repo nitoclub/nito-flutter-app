@@ -8,14 +8,6 @@ final routerProvider = Provider<GoRouter>(
   (ref) => GoRouter(
     routes: [
       GoRoute(
-        path: '/',
-        redirect: (context, state) {
-          return (ref.watch(isSignedInProvider).value ?? false)
-              ? '/top'
-              : '/login';
-        },
-      ),
-      GoRoute(
         path: '/login',
         builder: (context, state) => const LoginPage(),
       ),
@@ -30,5 +22,8 @@ final routerProvider = Provider<GoRouter>(
       //       ExamplePage(something: state.params['something']),
       // ),
     ],
+    redirect: (context, state) {
+      return ref.watch(userProvider) != null ? state.path : '/login';
+    },
   ),
 );
