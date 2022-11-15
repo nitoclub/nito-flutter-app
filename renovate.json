@@ -6,6 +6,6 @@
     ":automergePatch"
   ],
   "schedule": [
-    "every weekend"
+    "before 3am"
   ]
 }
