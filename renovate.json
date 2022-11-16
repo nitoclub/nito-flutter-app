@@ -3,9 +3,16 @@
   "extends": [
     "config:base",
     ":timezone(Asia/Tokyo)",
-    ":automergePatch"
+    ":automergeMinor"
+  ],
+  "dependencyDashboard": true,
+  "labels": [
+    "renovate"
   ],
   "schedule": [
+    "before 3am"
+  ],
+  "automergeSchedule": [
     "before 3am"
   ]
 }
