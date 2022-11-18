@@ -3,16 +3,19 @@
   "extends": [
     "config:base",
     ":timezone(Asia/Tokyo)",
-    ":automergeMinor"
+    ":automergeMinor",
+    "group:allNonMajor"
   ],
   "dependencyDashboard": true,
   "labels": [
-    "renovate"
+    "dependencies"
   ],
   "schedule": [
-    "before 3am"
+    "before 7am"
   ],
   "automergeSchedule": [
-    "before 3am"
-  ]
+    "before 7am"
+  ],
+  "commitMessagePrefix": ":wrench:",
+  "pruneBranchAfterAutomerge": true
 }
