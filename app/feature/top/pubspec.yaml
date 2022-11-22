@@ -20,6 +20,8 @@ dependencies:
     path: ../../core/data
   nito_feature_core:
     path: ../core
+  nito_testing:
+    path: ../../core/testing
   hooks_riverpod: ^2.0.2
   freezed: ^2.2.1
   freezed_annotation: ^2.2.0

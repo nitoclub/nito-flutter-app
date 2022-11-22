@@ -413,6 +413,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  nito_testing:
+    dependency: "direct overridden"
+    description:
+      path: "../../../core/testing"
+      relative: true
+    source: path
+    version: "0.0.1"
   package_config:
     dependency: transitive
     description:
