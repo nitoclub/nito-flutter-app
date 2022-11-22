@@ -33,7 +33,10 @@ final routerProvider = Provider<GoRouter>(
       // ルートもしくはログインページへのアクセスはそのまま
       if (state.location == '/' || state.location == '/login') return null;
       // セッションがない場合、ログインページへリダイレクトされる。
-      return ref.watch(userProvider) != null ? null : '/login';
+      return ref.watch(userProvider) != null ||
+              (ref.watch(isSignedInProvider).value ?? false)
+          ? null
+          : '/login';
     },
   ),
 );
