@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nito_data/nito_data.dart';
 import 'package:nito_feature_auth/src/login/login_page_state.dart';
-import 'package:nito_data_auth/nito_data_auth.dart';
 
 final loginPageController =
     StateNotifierProvider<LoginPageController, LoginPageState>(

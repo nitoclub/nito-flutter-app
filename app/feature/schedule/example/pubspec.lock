@@ -357,13 +357,6 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  nito_data_schedule:
-    dependency: "direct overridden"
-    description:
-      path: "../../../data/schedule"
-      relative: true
-    source: path
-    version: "0.0.1"
   nito_database:
     dependency: "direct overridden"
     description:
