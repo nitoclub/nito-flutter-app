@@ -16,6 +16,8 @@ dependencies:
     path: ../../core/styleguide
   nito_data_schedule:
     path: ../../data/schedule
+  nito_data:
+    path: ../../core/data
   nito_feature_core:
     path: ../core
   hooks_riverpod: ^2.0.2

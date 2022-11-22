@@ -1,11 +1,11 @@
-name: nito_network
-description: NITO のネットワークパッケージ
+name: nito_database
+description: NITO のデータベースパッケージ
 version: 0.0.1
 homepage: none
 publish_to: none
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=2.18.4 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -15,8 +15,6 @@ dependencies:
     path: ../common
   nito_model:
     path: ../model
-  nito_database:
-    path: ../database
   supabase_flutter: ^1.0.0
   hooks_riverpod: ^2.0.2
 

@@ -17,6 +17,8 @@ dependencies:
     path: ../../core/styleguide
   nito_data_auth:
     path: ../../data/auth
+  nito_data:
+    path: ../../core/data
   nito_feature_core:
     path: ../core
   freezed: ^2.2.1
