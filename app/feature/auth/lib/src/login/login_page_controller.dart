@@ -21,15 +21,15 @@ class LoginPageController extends StateNotifier<LoginPageState> {
   final TextEditingController emailController;
   final TextEditingController passwordController;
 
-  void onPasswordFieldSubmitted() {
+  Future<void> onPasswordFieldSubmitted() async {
     if (!state.isLoginProcessing) {
-      _login();
+      await _login();
     }
   }
 
-  void onSignInButtonPressed() {
+  Future<void> onSignInButtonPressed() async {
     if (!state.isLoginProcessing) {
-      _login();
+      await _login();
     }
   }
 
