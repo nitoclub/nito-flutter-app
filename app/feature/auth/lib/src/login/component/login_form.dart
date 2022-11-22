@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nito_styleguide/nito_styleguide.dart';
 
 class LoginForm extends StatelessWidget {
@@ -11,14 +10,16 @@ class LoginForm extends StatelessWidget {
     required this.passwordController,
     required this.onPasswordFieldSubmitted,
     required this.onSignInButtonPressed,
+    required this.contextGo,
   });
 
   final bool isSuccessSignIn;
   final bool isSignInProcessing;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final void Function() onPasswordFieldSubmitted;
-  final void Function() onSignInButtonPressed;
+  final Future<void> Function() onPasswordFieldSubmitted;
+  final Future<void> Function() onSignInButtonPressed;
+  final VoidCallback contextGo;
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +49,9 @@ class LoginForm extends StatelessWidget {
           keyboardType: TextInputType.visiblePassword,
           obscureText: true,
           textInputAction: TextInputAction.done,
-          onFieldSubmitted: (String? value) {
-            onPasswordFieldSubmitted();
-            isSuccessSignIn ? context.go('/top') : null;
+          onFieldSubmitted: (String? value) async {
+            await onPasswordFieldSubmitted();
+            contextGo();
           },
         ),
 
@@ -60,9 +61,9 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {
-              onSignInButtonPressed();
-              isSuccessSignIn ? context.go('/top') : null;
+            onPressed: () async {
+              await onSignInButtonPressed();
+              contextGo();
             },
             child: Text(isSignInProcessing ? 'サインイン中です…' : 'サインイン'),
           ),

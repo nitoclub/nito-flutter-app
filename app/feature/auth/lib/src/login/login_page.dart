@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nito_feature_auth/src/login/component/login_form.dart';
 import 'package:nito_feature_auth/src/login/login_page_controller.dart';
@@ -19,6 +20,7 @@ class LoginPage extends HookConsumerWidget {
       passwordController: controller.passwordController,
       onPasswordFieldSubmitted: controller.onPasswordFieldSubmitted,
       onSignInButtonPressed: controller.onSignInButtonPressed,
+      contextGo: () => context.go('/'),
     );
   }
 }
@@ -31,14 +33,16 @@ class _StatelessLoginPage extends StatelessWidget {
     required this.passwordController,
     required this.onPasswordFieldSubmitted,
     required this.onSignInButtonPressed,
+    required this.contextGo,
   });
 
   final bool isSuccessSignIn;
   final bool isSignInProcessing;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final void Function() onPasswordFieldSubmitted;
-  final void Function() onSignInButtonPressed;
+  final Future<void> Function() onPasswordFieldSubmitted;
+  final Future<void> Function() onSignInButtonPressed;
+  final VoidCallback contextGo;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +60,7 @@ class _StatelessLoginPage extends StatelessWidget {
             passwordController: passwordController,
             onPasswordFieldSubmitted: onPasswordFieldSubmitted,
             onSignInButtonPressed: onSignInButtonPressed,
+            contextGo: contextGo,
           ),
         ],
       ),
