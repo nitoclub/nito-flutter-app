@@ -1,6 +1,0 @@
-arb-dir: lib/src/l10n
-template-arb-file: app_ja.arb
-output-localization-file: l10n.dart
-output-class: L10n
-# FIXME: 合成パッケージで動作するようにしたい
-synthetic-package: false

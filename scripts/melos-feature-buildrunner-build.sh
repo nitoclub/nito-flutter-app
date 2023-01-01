@@ -7,7 +7,7 @@ FILE_PATH=$(
 )
 
 # アプリケーションディレクトリに移動
-cd "$FILE_PATH/../app" || exit
+cd "$FILE_PATH/../apps" || exit
 
 # melos run feature:build_runner:build を実行
 melos run feature:build_runner:build

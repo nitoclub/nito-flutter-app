@@ -7,7 +7,7 @@ FILE_PATH=$(
 )
 
 # アプリケーションディレクトリに移動
-cd "$FILE_PATH/../app" || exit
+cd "$FILE_PATH/../apps" || exit
 
 # melos bs を実行
 fvm flutter pub global run melos bs

@@ -1,0 +1,35 @@
+name: NITO
+repository: https://github.com/2rabs/nito
+
+packages:
+  - apps/**
+  - packages/**
+
+ide:
+  intellij:
+    enabled: true
+    moduleNamePrefix: nito_
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+    runPubGetInParallel: true
+
+scripts:
+  format:
+    run: |
+      melos exec -- \
+        flutter format --dry-run --set-exit-if-changed lib/
+    description: Format in all packages
+    select-package:
+      flutter: true
+      dir-exists: lib
+
+  test:
+    run: |
+      melos exec --fail-fast -- \
+        flutter test --coverage
+    description: flutter test in all packages
+    select-package:
+      flutter: true
+      dir-exists: test
