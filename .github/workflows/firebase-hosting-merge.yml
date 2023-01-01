@@ -30,7 +30,7 @@ jobs:
       # 指定されたバージョンの Flutter をインストール
       - name: setup flutter
         run: fvm install
-        working-directory: ./app
+        working-directory: ./apps
 
       # 依存パッケージを解決
       - name: download flutter packages
@@ -42,12 +42,12 @@ jobs:
           touch .env
           echo SUPABASE_URL=${{secrets.SUPABASE_URL}} >> .env
           echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
-        working-directory: ./app/frontend
+        working-directory: ./apps/frontend
 
       # Web ビルドを実行
       - name: web build
         run: fvm flutter build web
-        working-directory: ./app/frontend
+        working-directory: ./apps/frontend
 
       # Firebase Hosting にデプロイ
       - uses: FirebaseExtended/action-hosting-deploy@v0

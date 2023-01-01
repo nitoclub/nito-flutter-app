@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "app/frontend/build/web",
+    "public": "apps/frontend/build/web",
     "ignore": [
       "firebase.json",
       ".github/",

@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: core_common,core_model
+dependency_overrides:
+  core_common:
+    path: ../common
+  core_model:
+    path: ../model

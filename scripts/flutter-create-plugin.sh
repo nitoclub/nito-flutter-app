@@ -7,7 +7,7 @@ FILE_PATH=$(
 )
 
 # アプリケーションディレクトリに移動
-cd "$FILE_PATH/../app" || exit
+cd "$FILE_PATH/../apps" || exit
 
 # 指定されたディレクトリに移動
 PLUGIN_ROOT=$2
