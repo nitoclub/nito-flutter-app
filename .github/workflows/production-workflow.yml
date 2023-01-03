@@ -7,13 +7,13 @@ on:
 
 jobs:
   migrate-supabase-database:
-    uses: ..github/workflows/production-supabase-database-migration.yml
+    uses: ./.github/workflows/production-supabase-database-migration.yml
     secrets:
       supabaseAccessToken: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       productionDatabasePassword: ${{ secrets.PRODUCTION_DB_PASSWORD }}
 
   deploy-firebase-hosting:
-    uses: ..github/workflows/production-firebase-hosting-deploy.yml
+    uses: ./.github/workflows/production-firebase-hosting-deploy.yml
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
       firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TWORABS_NITO }}
