@@ -1,0 +1,29 @@
+name: Deploy Migrations to Production
+
+on:
+  workflow_call:
+    secrets:
+      supabaseAccessToken:
+        required: true
+      productionDatabasePassword:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.supabaseAccessToken }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.productionDatabasePassword }}
+      PROJECT_ID: hwxxihvcszfhaxlguajv
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 1.1.1
+
+      - run: |
+          supabase link --project-ref $PROJECT_ID
+          supabase db push
