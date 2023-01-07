@@ -1,6 +1,10 @@
 name: Deploy to Firebase Hosting on PR
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'apps/**'
+      - 'packages/**'
 
 jobs:
   build_and_preview:
@@ -20,7 +24,6 @@ jobs:
       - name: install melos
         run: |
           dart pub global activate melos
-          export PATH="$PATH":"$HOME/.pub-cache/bin"
           melos bootstrap
 
       # 本番環境用の .env を作成

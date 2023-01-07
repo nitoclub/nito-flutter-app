@@ -1,12 +1,13 @@
 name: Deploy to Firebase Hosting on merge
 
 on:
-  workflow_call:
-    secrets:
-      githubToken:
-        required: true
-      firebaseServiceAccount:
-        required: true
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+  workflow_dispatch:
 
 jobs:
   build_and_deploy:
@@ -27,7 +28,6 @@ jobs:
       - name: install melos
         run: |
           dart pub global activate melos
-          export PATH="$PATH":"$HOME/.pub-cache/bin"
           melos bootstrap
 
       # 本番環境用の .env を作成
@@ -46,7 +46,7 @@ jobs:
       # Firebase Hosting にデプロイ
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.githubToken }}'
-          firebaseServiceAccount: '${{ secrets.firebaseServiceAccount }}'
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TWORABS_NITO }}'
           channelId: live
           projectId: tworabs-nito
