@@ -18,25 +18,17 @@ jobs:
         with:
           ref: main
 
-      # Homebrew がインストールされているため brew で fvm をインストール
-      # https://github.com/actions/runner-images/blob/main/images/macos/macos-12-Readme.md
-      - name: install fvm
-        run: |
-          brew tap leoafarias/fvm
-          brew install fvm
+      # asdf と .tool-versions に記載してある flutter をインストール
+      # https://github.com/asdf-vm/actions#main-actions
+      - name: install asdf and flutter plugin
+        uses: asdf-vm/actions/install@v1
 
       # Melos をインストール
       - name: install melos
-        run: dart pub global activate melos
-
-      # 指定されたバージョンの Flutter をインストール
-      - name: setup flutter
-        run: fvm install
-        working-directory: ./apps
-
-      # 依存パッケージを解決
-      - name: download flutter packages
-        run: make melos-bs
+        run: |
+          dart pub global activate melos
+          export PATH="$PATH":"$HOME/.pub-cache/bin"
+          melos bootstrap
 
       # 本番環境用の .env を作成
       - name: create .env
@@ -48,7 +40,7 @@ jobs:
 
       # Web ビルドを実行
       - name: web build
-        run: fvm flutter build web
+        run: flutter build web
         working-directory: ./apps/frontend
 
       # Firebase Hosting にデプロイ
