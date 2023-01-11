@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:core_network/src/authenticator.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -8,6 +10,10 @@ class RealAuthenticator implements Authenticator {
 
   @override
   Stream<AuthState> get onAuthStateChange => _client.onAuthStateChange;
+
+  @override
+  Stream<bool> get isAuthenticated =>
+      onAuthStateChange.map((event) => event.session != null);
 
   @override
   Future<AuthResponse> signIn({

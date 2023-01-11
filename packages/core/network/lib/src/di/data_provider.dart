@@ -1,8 +1,17 @@
+import 'package:core_network/src/nito_network_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' as rp;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:core_network/src/authenticator.dart';
 import 'package:core_network/src/real_authenticator.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+/// NetworkService
+final rp.Provider<NitoNetworkService> networkServiceProvider = rp.Provider(
+  (ref) => NitoNetworkService(
+      authenticator: ref.read(authenticatorProvider),
+      supabaseClient: ref.read(supabaseClientProvider),
+  ),
+);
 
 /// SupabaseClient
 final rp.Provider<SupabaseClient> supabaseClientProvider = rp.Provider(
