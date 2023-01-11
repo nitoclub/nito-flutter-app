@@ -19,6 +19,14 @@ jobs:
         with:
           ref: main
 
+      # 本番環境用の .env を作成
+      - name: create .env
+        run: |
+          touch .env
+          echo SUPABASE_URL=${{secrets.SUPABASE_URL}} >> .env
+          echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
+        working-directory: ./apps/frontend
+
       # asdf と .tool-versions に記載してある flutter をインストール
       # https://github.com/asdf-vm/actions#main-actions
       - name: install asdf and flutter plugin
@@ -28,15 +36,8 @@ jobs:
       - name: install melos
         run: |
           dart pub global activate melos
+          export PATH="$PATH":"$HOME/.pub-cache/bin"
           melos bootstrap
-
-      # 本番環境用の .env を作成
-      - name: create .env
-        run: |
-          touch .env
-          echo SUPABASE_URL=${{secrets.SUPABASE_URL}} >> .env
-          echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
-        working-directory: ./apps/frontend
 
       # Web ビルドを実行
       - name: web build
