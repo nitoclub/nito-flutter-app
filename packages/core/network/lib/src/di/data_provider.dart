@@ -1,9 +1,17 @@
+import 'package:core_network/core_network.dart';
 import 'package:core_network/src/nito_network_service.dart';
+import 'package:core_network/src/participation/supabase_participation_api.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' as rp;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:core_network/src/authenticator.dart';
 import 'package:core_network/src/real_authenticator.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+/// ParticipationApi
+final rp.Provider<ParticipationApi> participationApi = rp.Provider(
+  (ref) => SupabaseParticipationApi(
+    networkService: ref.read(networkServiceProvider),
+  ),
+);
 
 /// NetworkService
 final rp.Provider<NitoNetworkService> networkServiceProvider = rp.Provider(
