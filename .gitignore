@@ -18,3 +18,6 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
+
+# FVM related
+**/.fvm/flutter_sdk
