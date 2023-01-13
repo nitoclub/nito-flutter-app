@@ -17,7 +17,9 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/
+.idea/*
+# Keep the project icon.
+!/.idea/icon.png
 
 # FVM related
 **/.fvm/flutter_sdk
