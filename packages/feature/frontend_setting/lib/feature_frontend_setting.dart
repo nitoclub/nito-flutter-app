@@ -1,4 +1,3 @@
-
 import 'feature_frontend_setting_platform_interface.dart';
 
 class FeatureFrontendSetting {

@@ -8,7 +8,8 @@ abstract class FeatureFrontendSettingPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FeatureFrontendSettingPlatform _instance = MethodChannelFeatureFrontendSetting();
+  static FeatureFrontendSettingPlatform _instance =
+      MethodChannelFeatureFrontendSetting();
 
   /// The default instance of [FeatureFrontendSettingPlatform] to use.
   ///

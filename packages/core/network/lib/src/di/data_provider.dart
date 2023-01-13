@@ -16,8 +16,8 @@ final rp.Provider<ParticipationApi> participationApi = rp.Provider(
 /// NetworkService
 final rp.Provider<NitoNetworkService> networkServiceProvider = rp.Provider(
   (ref) => NitoNetworkService(
-      authenticator: ref.read(authenticatorProvider),
-      supabaseClient: ref.read(supabaseClientProvider),
+    authenticator: ref.read(authenticatorProvider),
+    supabaseClient: ref.read(supabaseClientProvider),
   ),
 );
 

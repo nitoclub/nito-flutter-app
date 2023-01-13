@@ -3,11 +3,10 @@ import 'package:core_network/core_network.dart';
 
 /// 認証系のデータ操作リポジトリ
 class DataAuthRepository implements AuthRepository {
-
   final Authenticator _authenticator;
 
-  DataAuthRepository({required Authenticator authenticator}) :
-        _authenticator = authenticator;
+  DataAuthRepository({required Authenticator authenticator})
+      : _authenticator = authenticator;
 
   @override
   Future<bool> signIn(String email, String password) async {
