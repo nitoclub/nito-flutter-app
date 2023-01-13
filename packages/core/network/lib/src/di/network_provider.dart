@@ -7,7 +7,7 @@ import 'package:core_network/src/real_authenticator.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// ParticipationApi
-final rp.Provider<ParticipationApi> participationApi = rp.Provider(
+final rp.Provider<ParticipationApi> participationApiProvider = rp.Provider(
   (ref) => SupabaseParticipationApi(
     networkService: ref.read(networkServiceProvider),
   ),
