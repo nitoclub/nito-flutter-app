@@ -16,6 +16,6 @@
   "automergeSchedule": [
     "before 7am"
   ],
-  "commitMessagePrefix": ":wrench:",
+  "commitMessagePrefix": ":up:",
   "pruneBranchAfterAutomerge": true
 }
