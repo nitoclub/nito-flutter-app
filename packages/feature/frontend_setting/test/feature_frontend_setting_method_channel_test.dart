@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:feature_frontend_setting/feature_frontend_setting_method_channel.dart';
 
 void main() {
-  MethodChannelFeatureFrontendSetting platform = MethodChannelFeatureFrontendSetting();
+  MethodChannelFeatureFrontendSetting platform =
+      MethodChannelFeatureFrontendSetting();
   const MethodChannel channel = MethodChannel('feature_frontend_setting');
 
   TestWidgetsFlutterBinding.ensureInitialized();

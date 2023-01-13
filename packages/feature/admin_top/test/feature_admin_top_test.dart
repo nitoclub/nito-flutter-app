@@ -7,13 +7,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockFeatureAdminTopPlatform
     with MockPlatformInterfaceMixin
     implements FeatureAdminTopPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
 
 void main() {
-  final FeatureAdminTopPlatform initialPlatform = FeatureAdminTopPlatform.instance;
+  final FeatureAdminTopPlatform initialPlatform =
+      FeatureAdminTopPlatform.instance;
 
   test('$MethodChannelFeatureAdminTop is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelFeatureAdminTop>());

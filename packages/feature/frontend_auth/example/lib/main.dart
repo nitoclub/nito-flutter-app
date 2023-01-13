@@ -6,7 +6,7 @@ void main() {
   runApp(const LoginPageTest());
 }
 
-class LoginPageTest extends HookConsumerWidget{
+class LoginPageTest extends HookConsumerWidget {
   const LoginPageTest({super.key});
 
   @override

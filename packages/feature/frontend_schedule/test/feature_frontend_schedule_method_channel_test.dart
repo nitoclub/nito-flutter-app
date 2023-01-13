@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:feature_frontend_schedule/feature_frontend_schedule_method_channel.dart';
 
 void main() {
-  MethodChannelFeatureFrontendSchedule platform = MethodChannelFeatureFrontendSchedule();
+  MethodChannelFeatureFrontendSchedule platform =
+      MethodChannelFeatureFrontendSchedule();
   const MethodChannel channel = MethodChannel('feature_frontend_schedule');
 
   TestWidgetsFlutterBinding.ensureInitialized();

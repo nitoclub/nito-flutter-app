@@ -8,7 +8,8 @@ abstract class FeatureFrontendSchedulePlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FeatureFrontendSchedulePlatform _instance = MethodChannelFeatureFrontendSchedule();
+  static FeatureFrontendSchedulePlatform _instance =
+      MethodChannelFeatureFrontendSchedule();
 
   /// The default instance of [FeatureFrontendSchedulePlatform] to use.
   ///

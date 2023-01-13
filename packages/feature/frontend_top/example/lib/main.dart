@@ -6,7 +6,7 @@ void main() {
   runApp(const TopPageTest());
 }
 
-class TopPageTest extends HookConsumerWidget{
+class TopPageTest extends HookConsumerWidget {
   const TopPageTest({super.key});
 
   @override
