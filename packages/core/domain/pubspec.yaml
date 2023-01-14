@@ -16,6 +16,7 @@ dependencies:
     path: ../data
   core_model:
     path: ../model
+  hooks_riverpod: ^2.0.2
 
 dev_dependencies:
   flutter_test:
