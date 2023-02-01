@@ -1,5 +1,5 @@
 import 'package:core_data/core_data.dart';
-import 'package:core_data/src/schedule/model/schedule.dart';
+import 'package:core_model/core_model.dart';
 import 'package:core_network/core_network.dart';
 
 /// スケジュールのデータ操作リポジトリ

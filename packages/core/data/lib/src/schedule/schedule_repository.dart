@@ -1,4 +1,4 @@
-import 'package:core_data/src/schedule/model/schedule.dart';
+import 'package:core_model/core_model.dart';
 
 /// スケジュールリポジトリ
 abstract class ScheduleRepository {
