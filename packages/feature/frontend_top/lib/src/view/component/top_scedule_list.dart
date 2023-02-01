@@ -1,5 +1,5 @@
-import 'package:feature_frontend_top/src/repository/schedule_list_repository.dart';
 import 'package:feature_frontend_top/src/view/component/top_schedule_list_tile.dart';
+import 'package:feature_frontend_top/src/view/controller/top_schedule_list_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -8,7 +8,7 @@ class TopScheduleList extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncData = ref.watch(scheduleListGetRepository);
+    final asyncData = ref.watch(topScheduleListProvider);
 
     return asyncData.when(
       loading: () => const Center(child: CircularProgressIndicator()),
@@ -16,7 +16,7 @@ class TopScheduleList extends HookConsumerWidget {
         return Center(
           child: IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: () => ref.refresh(scheduleListGetRepository),
+            onPressed: () => ref.refresh(topScheduleListProvider),
           ),
         );
       },
