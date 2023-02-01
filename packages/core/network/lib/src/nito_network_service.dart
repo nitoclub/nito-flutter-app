@@ -14,7 +14,7 @@ class NitoNetworkService {
   Future<R> query<R>({
     bool needAuth = true,
     required String table,
-    required PostgrestFilterBuilder<R> Function(SupabaseQueryBuilder builder)
+    required PostgrestTransformBuilder<R> Function(SupabaseQueryBuilder builder)
         action,
   }) async {
     if (needAuth && !await _authenticator.isAuthenticated.last) {
