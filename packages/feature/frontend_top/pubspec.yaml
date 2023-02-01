@@ -16,8 +16,6 @@ dependencies:
 
   core_common:
     path: ../../core/common
-  core_network:
-    path: ../../core/network
   core_model:
     path: ../../core/model
   core_data:
