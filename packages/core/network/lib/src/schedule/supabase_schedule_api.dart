@@ -1,5 +1,6 @@
 import 'package:core_network/core_network.dart';
 import 'package:core_network/src/nito_network_service.dart';
+import 'package:core_network/src/schedule/model/network_schedule.dart';
 
 /// スケジュールAPI を SupabaseClient で実装したクラス
 class SupabaseScheduleApi implements ScheduleApi {
@@ -11,14 +12,21 @@ class SupabaseScheduleApi implements ScheduleApi {
       : _networkService = networkService;
 
   @override
-  Future<void> fetchSchedules(int scheduleId) {
+  Future<List<NetworkSchedule>> fetchSchedules() {
     return _networkService
         .query(
       table: _table,
-      action: (builder) => builder.select('*'),
+      action: (builder) => builder
+          .select('*')
+          .is_(NetworkScheduleFields.deletedAt, null)
+          .gte(NetworkScheduleFields.date, DateTime.now())
+          .order(NetworkScheduleFields.date, ascending: true),
     )
-        .then((value) {
-      return null;
-    });
+        .then(
+      (value) {
+        final castedList = value as List<dynamic>;
+        return castedList.map((e) => NetworkSchedule.fromJson(e)).toList();
+      },
+    );
   }
 }
