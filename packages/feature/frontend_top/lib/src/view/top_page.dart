@@ -8,8 +8,6 @@ class TopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // FIXME(Daichi): 今後WEBとMOBILEで分岐する際に修正
-    return kIsWeb
-        ? const TopPageForMobile()
-        : const TopPageForMobile();
+    return kIsWeb ? const TopPageForMobile() : const TopPageForMobile();
   }
 }
