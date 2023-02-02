@@ -1,24 +1,25 @@
 import 'package:core_network/core_network.dart';
-import 'package:core_network/src/nito_network_service.dart';
+import 'package:core_network/src/schedule/model/network_schedule.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// スケジュールAPI を SupabaseClient で実装したクラス
 class SupabaseScheduleApi implements ScheduleApi {
   static const _table = 'schedules';
 
-  final NitoNetworkService _networkService;
+  final SupabaseClient _supabaseClient;
 
-  SupabaseScheduleApi({required NitoNetworkService networkService})
-      : _networkService = networkService;
+  SupabaseScheduleApi({required SupabaseClient supabaseClient})
+      : _supabaseClient = supabaseClient;
 
   @override
-  Future<void> fetchSchedules(int scheduleId) {
-    return _networkService
-        .query(
-      table: _table,
-      action: (builder) => builder.select('*'),
-    )
-        .then((value) {
-      return null;
-    });
+  Future<List<NetworkSchedule>> fetchSchedules() async {
+    final val = await _supabaseClient
+        .from(_table)
+        .select('*')
+        .is_(NetworkScheduleFields.deletedAt, null)
+        .gte(NetworkScheduleFields.date, DateTime.now())
+        .order(NetworkScheduleFields.date, ascending: true);
+    final castedList = val as List<dynamic>;
+    return castedList.map((e) => NetworkSchedule.fromJson(e)).toList();
   }
 }
