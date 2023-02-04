@@ -22,6 +22,9 @@ categories:
   - title: '⛓️ Dependency update'
     label: 'dependencies'
 
+exclude-labels:
+  - 'skip-changelog'
+
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
