@@ -10,6 +10,10 @@ PLUGIN_NAME = new_plugin
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?# .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":[^#]*? #| #"}; {printf "%-57s%s\n", $$1 $$3, $$2}'
 
+.PHONY: setup
+setup: # Setup project development
+	@./tools/setup.sh
+
 .PHONY: prepare
 prepare: # Prepare project development
 	./scripts/prepare-git-commit-message-template.sh
