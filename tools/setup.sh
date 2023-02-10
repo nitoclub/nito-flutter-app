@@ -107,6 +107,7 @@ if type docker >/dev/null 2>&1; then
     else
       echo "⚠️ Supabase: Skip this step as the Supabase container has already been started."
     fi
+    supabase gen types typescript --linked --schema public > supabase/functions/_shared/schema.ts
   else
     echo "⚠️ Supabase: The process has been skipped as the supabase command could not be found."
   fi
