@@ -38,34 +38,13 @@ echo "🚀 Git commit message: Finished"
 ##  Version Management Tools
 ##
 ##############################################################################
-TOOL_ASDF="asdf"
-TOOL_FVM="fvm"
-TOOL_NONE="none"
-
 echo ""
 echo "🚀 Version Management: Start"
-
-echo "🚀 Version Management: Select the version control tool that will be used for the setup."
-select tool in $TOOL_ASDF $TOOL_FVM $TOOL_NONE; do
-  case $tool in
-  "$TOOL_ASDF")
-    if type asdf >/dev/null 2>&1; then
-      asdf install
-    else
-      echo "⚠️ Version Management: The process has been skipped as the asdf command could not be found."
-    fi
-    ;;
-  "$TOOL_FVM")
-    if type fvm >/dev/null 2>&1; then
-      fvm install
-    else
-      echo "⚠️ Version Management: The process has been skipped as the fvm command could not be found."
-    fi
-    ;;
-  *) echo "⚠️ Version Management: Skip the processing as \"none\" or an invalid choice has been selected." ;;
-  esac
-  break
-done
+if type fvm >/dev/null 2>&1; then
+  fvm install
+else
+  echo "⚠️ Version Management: The process has been skipped as the fvm command could not be found."
+fi
 echo "🚀 Version Management: Finished"
 
 ##############################################################################
@@ -73,23 +52,20 @@ echo "🚀 Version Management: Finished"
 ##  Melos
 ##
 ##############################################################################
-# TODO: Melos をここで使用できるようにする
-#echo ""
-#echo "🚀 Melos: Start"
-#
-## Install Melos
-#if ! (type melos >/dev/null 2>&1); then
-#  echo "🔒️ Melos: Install Melos as it is missing."
-#  dart pub global activate melos
-#  export PATH="$PATH\":\"$HOME/.pub-cache/bin"
-#fi
-#
-#if type melos >/dev/null 2>&1; then
-#  echo "🔒️ Melos: Bootstrap."
-#  melos bs
-#fi
-#
-#echo "🚀 Melos: Finished"
+echo ""
+echo "🚀 Melos: Start"
+
+# FIXME: ここで PATH を通さなくても実行できるようにしたい
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+if type melos >/dev/null 2>&1; then
+  echo "🔒️ Melos: Bootstrap."
+  melos bs
+else
+  echo "⚠️ Melos: The process has been skipped as the melos command could not be found."
+fi
+
+echo "🚀 Melos: Finished"
 
 ##############################################################################
 ##
@@ -107,7 +83,7 @@ if type docker >/dev/null 2>&1; then
     else
       echo "⚠️ Supabase: Skip this step as the Supabase container has already been started."
     fi
-    supabase gen types typescript --linked --schema public > supabase/functions/_shared/schema.ts
+    supabase gen types typescript --linked --schema public >supabase/functions/_shared/schema.ts
   else
     echo "⚠️ Supabase: The process has been skipped as the supabase command could not be found."
   fi

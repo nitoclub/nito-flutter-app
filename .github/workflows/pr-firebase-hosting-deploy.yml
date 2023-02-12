@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       # 本番環境用の .env を作成
       - name: create .env
@@ -23,10 +25,30 @@ jobs:
           echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
         working-directory: ./apps/frontend
 
-      # asdf と .tool-versions に記載してある flutter をインストール
-      # https://github.com/asdf-vm/actions#main-actions
-      - name: install asdf and flutter plugin
-        uses: asdf-vm/actions/install@v1
+      - name: install fvm
+        run: |
+          brew tap leoafarias/fvm
+          brew install fvm
+
+      # .fvm/fvm_config.json に指定された Flutter をインストール
+      - name: setup flutter
+        if: ${{ steps.flutter_cache_id.outputs.cache-hit != 'true' }}
+        run: fvm install
+
+      # パッケージをキャッシュ or キャッシュから復元
+      - name: cache flutter packages
+        uses: actions/cache@v3
+        id: flutter_packages_cache_id
+        env:
+          cache-name: cache-flutter-packages
+        with:
+          path: |
+            ${{ env.FLUTTER_HOME }}/.pub-cache
+            **/.packages
+            **/.flutter-plugins
+            **/.flutter-plugin-dependencies
+            **/.dart_tool/package_config.json
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
 
       # Melos をインストール
       - name: install melos
@@ -37,11 +59,12 @@ jobs:
 
       # Web ビルドを実行
       - name: web build
-        run: flutter build web
+        run: fvm flutter build web
         working-directory: ./apps/frontend
 
       # Firebase Hosting にデプロイ
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - id: deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TWORABS_NITO }}'
