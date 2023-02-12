@@ -1,6 +1,8 @@
 name: NITO
 repository: https://github.com/2rabs/nito
 
+sdkPath: .fvm/flutter_sdk
+
 packages:
   - apps/**
   - packages/**
