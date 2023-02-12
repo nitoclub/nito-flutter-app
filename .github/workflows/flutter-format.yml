@@ -17,11 +17,17 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: install asdf and plugins
-        uses: asdf-vm/actions/install@v1
+      - name: install fvm
+        run: |
+          brew tap leoafarias/fvm
+          brew install fvm
+
+      # .fvm/fvm_config.json に指定された Flutter をインストール
+      - name: setup flutter
+        run: fvm install
 
       - name: format
-        run: flutter format .
+        run: fvm flutter format .
 
       - name: create pull request
         uses: peter-evans/create-pull-request@v4
