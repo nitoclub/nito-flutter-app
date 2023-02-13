@@ -15,4 +15,4 @@ cd "$PLUGIN_ROOT" || exit
 
 # Flutter のプラグインを作成
 PLUGIN_NAME=$1
-fvm flutter create --template=plugin "$PLUGIN_NAME"
+fvm flutter create --template=plugin --platforms=android,ios,linux,macos,windows -a kotlin -i swift "$PLUGIN_NAME"
