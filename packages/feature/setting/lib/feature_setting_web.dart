@@ -8,9 +8,9 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'feature_setting_platform_interface.dart';
 
-/// A web implementation of the FeatureFrontendSettingPlatform of the FeatureFrontendSetting plugin.
+/// A web implementation of the FeatureSettingPlatform of the FeatureSetting plugin.
 class FeatureSettingWeb extends FeatureSettingPlatform {
-  /// Constructs a FeatureFrontendSettingWeb
+  /// Constructs a FeatureSettingWeb
   FeatureSettingWeb();
 
   static void registerWith(Registrar registrar) {

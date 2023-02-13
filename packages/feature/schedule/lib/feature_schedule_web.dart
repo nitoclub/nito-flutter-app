@@ -8,9 +8,9 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 import 'feature_schedule_platform_interface.dart';
 
-/// A web implementation of the FeatureFrontendSchedulePlatform of the FeatureFrontendSchedule plugin.
+/// A web implementation of the FeatureSchedulePlatform of the FeatureSchedule plugin.
 class FeatureScheduleWeb extends FeatureSchedulePlatform {
-  /// Constructs a FeatureFrontendScheduleWeb
+  /// Constructs a FeatureScheduleWeb
   FeatureScheduleWeb();
 
   static void registerWith(Registrar registrar) {

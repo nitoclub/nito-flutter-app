@@ -3,7 +3,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'feature_schedule_method_channel.dart';
 
 abstract class FeatureSchedulePlatform extends PlatformInterface {
-  /// Constructs a FeatureFrontendSchedulePlatform.
+  /// Constructs a FeatureSchedulePlatform.
   FeatureSchedulePlatform() : super(token: _token);
 
   static final Object _token = Object();

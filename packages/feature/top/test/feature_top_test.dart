@@ -4,26 +4,26 @@
 // import 'package:feature_frontend_top/feature_frontend_top_method_channel.dart';
 // import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 //
-// class MockFeatureFrontendTopPlatform
+// class MockFeatureTopPlatform
 //     with MockPlatformInterfaceMixin
-//     implements FeatureFrontendTopPlatform {
+//     implements FeatureTopPlatform {
 //
 //   @override
 //   Future<String?> getPlatformVersion() => Future.value('42');
 // }
 //
 // void main() {
-//   final FeatureFrontendTopPlatform initialPlatform = FeatureFrontendTopPlatform.instance;
+//   final FeatureTopPlatform initialPlatform = FeatureTopPlatform.instance;
 //
-//   test('$MethodChannelFeatureFrontendTop is the default instance', () {
-//     expect(initialPlatform, isInstanceOf<MethodChannelFeatureFrontendTop>());
+//   test('$MethodChannelFeatureTop is the default instance', () {
+//     expect(initialPlatform, isInstanceOf<MethodChannelFeatureTop>());
 //   });
 //
 //   test('getPlatformVersion', () async {
-//     FeatureFrontendTop featureFrontendTopPlugin = FeatureFrontendTop();
-//     MockFeatureFrontendTopPlatform fakePlatform = MockFeatureFrontendTopPlatform();
-//     FeatureFrontendTopPlatform.instance = fakePlatform;
+//     FeatureTop featureTopPlugin = FeatureTop();
+//     MockFeatureTopPlatform fakePlatform = MockFeatureTopPlatform();
+//     FeatureTopPlatform.instance = fakePlatform;
 //
-//     expect(await featureFrontendTopPlugin.getPlatformVersion(), '42');
+//     expect(await featureTopPlugin.getPlatformVersion(), '42');
 //   });
 // }
