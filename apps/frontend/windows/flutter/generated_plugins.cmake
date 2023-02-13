@@ -4,8 +4,9 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
-  feature_frontend_schedule
-  feature_frontend_setting
+  feature_schedule
+  feature_setting
+  feature_top
   url_launcher_windows
 )
 
