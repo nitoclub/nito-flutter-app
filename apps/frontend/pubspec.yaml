@@ -48,8 +48,8 @@ dependencies:
     path: ../../packages/feature/top
   feature_auth:
     path: ../../packages/feature/auth
-  feature_frontend_schedule:
-    path: ../../packages/feature/frontend_schedule
+  feature_schedule:
+    path: ../../packages/feature/schedule
   feature_frontend_setting:
     path: ../../packages/feature/frontend_setting
 

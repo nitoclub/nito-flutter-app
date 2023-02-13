@@ -3,8 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  feature_frontend_setting
-  feature_top
+  feature_schedule
   url_launcher_linux
 )
 

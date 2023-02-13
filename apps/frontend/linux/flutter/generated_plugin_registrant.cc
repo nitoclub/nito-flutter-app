@@ -6,15 +6,11 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <feature_frontend_schedule/feature_frontend_schedule_plugin.h>
 #include <feature_frontend_setting/feature_frontend_setting_plugin.h>
 #include <feature_top/feature_top_plugin.h>
 #include <url_launcher_linux/url_launcher_plugin.h>
 
 void fl_register_plugins(FlPluginRegistry* registry) {
-  g_autoptr(FlPluginRegistrar) feature_frontend_schedule_registrar =
-      fl_plugin_registry_get_registrar_for_plugin(registry, "FeatureFrontendSchedulePlugin");
-  feature_frontend_schedule_plugin_register_with_registrar(feature_frontend_schedule_registrar);
   g_autoptr(FlPluginRegistrar) feature_frontend_setting_registrar =
       fl_plugin_registry_get_registrar_for_plugin(registry, "FeatureFrontendSettingPlugin");
   feature_frontend_setting_plugin_register_with_registrar(feature_frontend_setting_registrar);
