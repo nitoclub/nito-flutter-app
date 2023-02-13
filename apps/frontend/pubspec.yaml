@@ -44,8 +44,8 @@ dependencies:
     path: ../../packages/core/network
   core_data:
     path: ../../packages/core/data
-  feature_frontend_top:
-    path: ../../packages/feature/frontend_top
+  feature_top:
+    path: ../../packages/feature/top
   feature_auth:
     path: ../../packages/feature/auth
   feature_frontend_schedule:
