@@ -7,13 +7,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockFeatureSettingPlatform
     with MockPlatformInterfaceMixin
     implements FeatureSettingPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
 
 void main() {
-  final FeatureSettingPlatform initialPlatform = FeatureSettingPlatform.instance;
+  final FeatureSettingPlatform initialPlatform =
+      FeatureSettingPlatform.instance;
 
   test('$MethodChannelFeatureSetting is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelFeatureSetting>());

@@ -8,8 +8,7 @@ abstract class FeatureSchedulePlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FeatureSchedulePlatform _instance =
-      MethodChannelFeatureSchedule();
+  static FeatureSchedulePlatform _instance = MethodChannelFeatureSchedule();
 
   /// The default instance of [FeatureSchedulePlatform] to use.
   ///
