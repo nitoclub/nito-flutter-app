@@ -1,5 +1,5 @@
 import 'package:core_network/core_network.dart';
-import 'package:feature_frontend_auth/feature_frontend_auth.dart';
+import 'package:feature_auth/feature_frontend_auth.dart';
 import 'package:feature_frontend_top/feature_frontend_top.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
