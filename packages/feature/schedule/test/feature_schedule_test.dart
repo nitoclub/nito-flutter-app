@@ -7,13 +7,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockFeatureSchedulePlatform
     with MockPlatformInterfaceMixin
     implements FeatureSchedulePlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
 
 void main() {
-  final FeatureSchedulePlatform initialPlatform = FeatureSchedulePlatform.instance;
+  final FeatureSchedulePlatform initialPlatform =
+      FeatureSchedulePlatform.instance;
 
   test('$MethodChannelFeatureSchedule is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelFeatureSchedule>());
