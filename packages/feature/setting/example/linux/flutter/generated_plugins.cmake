@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  feature_setting
   url_launcher_linux
 )
 

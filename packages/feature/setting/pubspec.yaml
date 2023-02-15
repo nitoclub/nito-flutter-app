@@ -42,14 +42,5 @@ dev_dependencies:
 flutter:
   plugin:
     platforms:
-      android:
-        package: com.example.feature_setting
-        pluginClass: FeatureSettingPlugin
-      ios:
-        pluginClass: FeatureSettingPlugin
-      linux:
-        pluginClass: FeatureSettingPlugin
-      macos:
-        pluginClass: FeatureSettingPlugin
-      windows:
-        pluginClass: FeatureSettingPluginCApi
+      some_platform:
+        pluginClass: somePluginClass
