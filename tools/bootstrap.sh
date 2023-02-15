@@ -14,7 +14,7 @@ echo ""
 FILE_PATH=$(dirname "$0")
 cd "$FILE_PATH/../" || exit
 
-echo "🚀 Setup start"
+echo "🚀 Bootstrap start"
 echo "🚀 Working directory: $(pwd)"
 
 ##############################################################################
@@ -98,4 +98,4 @@ echo "🚀 Supabase: Finished"
 ##
 ##############################################################################
 echo ""
-echo "🚀 Setup finished"
+echo "🚀 Bootstrap finished"
