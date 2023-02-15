@@ -42,14 +42,5 @@ dev_dependencies:
 flutter:
   plugin:
     platforms:
-      android:
-        package: com.example.feature_schedule
-        pluginClass: FeatureSchedulePlugin
-      ios:
-        pluginClass: FeatureSchedulePlugin
-      linux:
-        pluginClass: FeatureSchedulePlugin
-      macos:
-        pluginClass: FeatureSchedulePlugin
-      windows:
-        pluginClass: FeatureSchedulePluginCApi
+      some_platform:
+        pluginClass: somePluginClass
