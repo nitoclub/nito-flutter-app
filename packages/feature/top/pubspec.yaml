@@ -40,14 +40,5 @@ dev_dependencies:
 flutter:
   plugin:
     platforms:
-      android:
-        package: com.example.feature_top
-        pluginClass: FeatureTopPlugin
-      ios:
-        pluginClass: FeatureTopPlugin
-      linux:
-        pluginClass: FeatureTopPlugin
-      macos:
-        pluginClass: FeatureTopPlugin
-      windows:
-        pluginClass: FeatureTopPluginCApi
+      some_platform:
+        pluginClass: somePluginClass

@@ -8,7 +8,7 @@
 PRODUCT_NAME = feature_auth_example
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.featureAuthExample
+PRODUCT_BUNDLE_IDENTIFIER = club.nito.featureAuthExample
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 club.nito. All rights reserved.
