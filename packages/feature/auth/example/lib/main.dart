@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:feature_auth/feature_frontend_auth.dart';
+import 'package:feature_auth/feature_auth.dart';
 
 void main() {
-  runApp(const LoginPageTest());
+  runApp(
+    const ProviderScope(
+      child: LoginPageTest(),
+    ),
+  );
 }
 
 class LoginPageTest extends HookConsumerWidget {

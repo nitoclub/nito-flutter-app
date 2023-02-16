@@ -3,7 +3,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:feature_top/feature_top.dart';
 
 void main() {
-  runApp(const TopPageTest());
+  runApp(
+    const ProviderScope(
+      child: TopPageTest(),
+    ),
+  );
 }
 
 class TopPageTest extends HookConsumerWidget {
