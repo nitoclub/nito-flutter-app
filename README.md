@@ -35,24 +35,6 @@ SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 
 - Supabase の情報は [こちら](https://app.supabase.com/project/hwxxihvcszfhaxlguajv/settings/api) から取得できます。
 
-## Add Packages
+## Others
 
-### Package
-
-以下のコマンドを実行してパッケージを作成します。
-
-```shell
-make flutter-create-package PACKAGE_NAME=package_name
-# or
-make flutter-create-package PACKAGE_ROOT=core PACKAGE_NAME=package_name
-```
-
-### Plugin
-
-以下のコマンドを実行してプラグインを作成します。
-
-```shell
-make flutter-create-plugin PLUGIN_NAME=plugin_name
-# or
-make flutter-create-plugin PLUGIN_ROOT=feature PLUGIN_NAME=plugin_name
-```
+-[Development](docs/Development.md)
