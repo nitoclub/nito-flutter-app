@@ -4,6 +4,8 @@ PACKAGE_NAME = new_package
 PLUGIN_ROOT = .
 PLUGIN_NAME = new_plugin
 
+FEATURE_NAME = feature_name
+
 .DEFAULT_GOAL := help
 
 .PHONY: help
@@ -41,3 +43,7 @@ flutter-create-package: # Create a Flutter package
 .PHONY: flutter-create-plugin
 flutter-create-plugin: # Create a Flutter plugin
 	./scripts/flutter-create-plugin.sh ${PLUGIN_NAME} ${PLUGIN_ROOT}
+
+.PHONY: flutter-create-feature-plugin
+flutter-create-feature-plugin: # Create a Feature plugin
+	@./tools/flutter-create-feature-plugin.sh ${FEATURE_NAME}
