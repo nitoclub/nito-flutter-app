@@ -208,6 +208,13 @@ packages:
       relative: true
     source: path
     version: "0.1.0"
+  feature_settings:
+    dependency: "direct main"
+    description:
+      path: "../../packages/feature/settings"
+      relative: true
+    source: path
+    version: "0.1.0"
   feature_top:
     dependency: "direct main"
     description:

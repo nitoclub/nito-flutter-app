@@ -13,7 +13,11 @@ class SettingsMobileScreen extends StatelessWidget {
         title: const Text('設定'),
         backgroundColor: Colors.blueAccent,
       ),
-      body: const Text(''),
+      body: Column(
+        children: const [
+          Text('')
+        ],
+      ),
     );
   }
 }
