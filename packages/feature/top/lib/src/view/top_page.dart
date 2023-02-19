@@ -3,11 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:feature_top/src/view/component/top_page_for_mobile.dart';
 
 class TopPage extends StatelessWidget {
-  const TopPage({super.key});
+  const TopPage(
+      {super.key,
+      required void Function(BuildContext context) onSettingsActionPressed})
+      : _onSettingsActionPressed = onSettingsActionPressed;
+
+  final void Function(BuildContext context) _onSettingsActionPressed;
 
   @override
   Widget build(BuildContext context) {
     // FIXME(Daichi): 今後WEBとMOBILEで分岐する際に修正
-    return kIsWeb ? const TopPageForMobile() : const TopPageForMobile();
+    return kIsWeb
+        ? TopPageForMobile(
+            onSettingsActionPressed: () => _onSettingsActionPressed(context),
+          )
+        : TopPageForMobile(
+            onSettingsActionPressed: () => _onSettingsActionPressed(context),
+          );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:core_network/core_network.dart';
 import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_top/feature_top.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -20,7 +22,15 @@ final routerProvider = Provider<GoRouter>(
       ),
       GoRoute(
         path: '/top',
-        builder: (context, state) => const TopPage(),
+        builder: (context, state) => TopPage(
+          onSettingsActionPressed: (BuildContext context) {
+            context.push('/settings');
+          },
+        ),
+      ),
+      GoRoute(
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
       ),
       // 引数付きの場合は以下のように作成する
       // GoRoute(

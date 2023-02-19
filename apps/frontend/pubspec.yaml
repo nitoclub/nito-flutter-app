@@ -26,6 +26,8 @@ dependencies:
     path: ../../packages/feature/top
   feature_auth:
     path: ../../packages/feature/auth
+  feature_settings:
+    path: ../../packages/feature/settings
 
   cupertino_icons: ^1.0.2
   flutter_dotenv: ^5.0.2

@@ -15,8 +15,10 @@ class TopPageTest extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const MaterialApp(
-      home: TopPage(),
+    return MaterialApp(
+      home: TopPage(
+        onSettingsActionPressed: (BuildContext context) {},
+      ),
     );
   }
 }

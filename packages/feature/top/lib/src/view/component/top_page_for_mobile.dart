@@ -2,7 +2,10 @@ import 'package:feature_top/src/view/component/top_scedule_list.dart';
 import 'package:flutter/material.dart';
 
 class TopPageForMobile extends StatelessWidget {
-  const TopPageForMobile({super.key});
+  const TopPageForMobile({super.key, required VoidCallback onSettingsActionPressed})
+      : _onSettingsActionPressed = onSettingsActionPressed;
+
+  final VoidCallback _onSettingsActionPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +16,11 @@ class TopPageForMobile extends StatelessWidget {
         // TODO(Daichi): l10nに修正
         title: const Text('今後のスケジュール'),
         backgroundColor: Colors.blueAccent,
+        actions: [
+          IconButton(
+              onPressed: _onSettingsActionPressed,
+              icon: const Icon(Icons.settings))
+        ],
       ),
       body: const TopScheduleList(),
     );
