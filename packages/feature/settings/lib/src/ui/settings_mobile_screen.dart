@@ -1,3 +1,5 @@
+import 'package:core_styleguide/core_styleguide.dart';
+import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
 class SettingsMobileScreen extends StatelessWidget {
@@ -13,10 +15,16 @@ class SettingsMobileScreen extends StatelessWidget {
         title: const Text('設定'),
         backgroundColor: Colors.blueAccent,
       ),
-      body: Column(
-        children: const [
-          Text('')
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(Space.x2),
+        child: Column(
+          children: [
+            LineLinkingSection(
+              isLineLinked: true,
+              onLineLinkingTogglePressed: () {},
+            )
+          ],
+        ),
       ),
     );
   }
