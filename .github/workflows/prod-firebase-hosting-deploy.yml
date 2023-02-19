@@ -24,6 +24,7 @@ jobs:
       - name: create .env
         run: |
           touch .env
+          echo LIFF_ID=${{secrets.LIFF_ID}} >> .env
           echo SUPABASE_URL=${{secrets.SUPABASE_URL}} >> .env
           echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
         working-directory: ./apps/frontend
