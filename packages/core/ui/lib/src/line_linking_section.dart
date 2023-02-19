@@ -31,7 +31,7 @@ class LineLinkingSection extends StatelessWidget {
                 TextButton(
                   onPressed: _onLineLinkingTogglePressed,
                   child:
-                  _isLineLinked ? const Text('解除する') : const Text('連携する'),
+                      _isLineLinked ? const Text('解除する') : const Text('連携する'),
                 )
               ],
             )
