@@ -22,6 +22,8 @@ dependencies:
     path: ../../packages/core/network
   core_data:
     path: ../../packages/core/data
+  core_styleguide:
+    path: ../../packages/core/styleguide
   feature_top:
     path: ../../packages/feature/top
   feature_auth:
