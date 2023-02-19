@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:frontend/src/app.dart';
+import 'package:frontend/src/utils/flutter_liff.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,11 @@ void main() async {
 
   // NOTE: env ファイルの読み込み
   await dotenv.load();
+
+  // NOTE: LIFF
+  await useLiff(
+    liffId: dotenv.get('LIFF_ID', fallback: '.env に LIFF_ID を指定してください。'),
+  );
 
   // Supabase の初期化
   await Supabase.initialize(
