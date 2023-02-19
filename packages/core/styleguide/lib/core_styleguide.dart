@@ -10,4 +10,6 @@ export 'src/component/nito_text_form_field.dart';
 export 'src/icon/nito_icons.dart';
 
 /// Theme
+export 'src/theme/light_theme.dart';
+export 'src/theme/dark_theme.dart';
 export 'src/theme/space.dart';
