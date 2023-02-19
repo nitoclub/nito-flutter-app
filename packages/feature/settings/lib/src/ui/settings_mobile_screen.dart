@@ -13,7 +13,6 @@ class SettingsMobileScreen extends StatelessWidget {
       appBar: AppBar(
         // TODO(Daichi): l10nに修正
         title: const Text('設定'),
-        backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(Space.x2),

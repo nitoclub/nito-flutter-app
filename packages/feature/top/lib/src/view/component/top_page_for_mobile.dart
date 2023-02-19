@@ -15,7 +15,6 @@ class TopPageForMobile extends StatelessWidget {
       appBar: AppBar(
         // TODO(Daichi): l10nに修正
         title: const Text('今後のスケジュール'),
-        backgroundColor: Colors.blueAccent,
         actions: [
           IconButton(
               onPressed: _onSettingsActionPressed,
