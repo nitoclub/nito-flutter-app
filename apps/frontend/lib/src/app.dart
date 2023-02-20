@@ -1,3 +1,5 @@
+import 'package:core_styleguide/core_styleguide.dart';
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:frontend/src/settings/router_settings.dart';
@@ -7,14 +9,18 @@ class App extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(
-      // onGenerateTitle: (context) => L10n.of(context)!.pokemon,
-      theme: ThemeData(),
-      darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.system,
-      routerConfig: ref.watch(routerProvider),
-      // localizationsDelegates: L10n.localizationsDelegates,
-      // supportedLocales: L10n.supportedLocales,
+    return DynamicColorBuilder(
+      builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+        return MaterialApp.router(
+          // onGenerateTitle: (context) => L10n.of(context)!.pokemon,
+          theme: lightTheme(lightDynamic),
+          darkTheme: darkTheme(darkDynamic),
+          themeMode: ThemeMode.system,
+          routerConfig: ref.watch(routerProvider),
+          // localizationsDelegates: L10n.localizationsDelegates,
+          // supportedLocales: L10n.supportedLocales,
+        );
+      },
     );
   }
 }

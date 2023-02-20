@@ -22,6 +22,8 @@ dependencies:
     path: ../../packages/core/network
   core_data:
     path: ../../packages/core/data
+  core_styleguide:
+    path: ../../packages/core/styleguide
   feature_top:
     path: ../../packages/feature/top
   feature_auth:
@@ -35,6 +37,7 @@ dependencies:
   supabase_flutter: ^1.0.0
   go_router: ^6.0.0
   js: ^0.6.5
+  dynamic_color: ^1.6.2
 
 dev_dependencies:
   flutter_test:
