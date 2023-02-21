@@ -4,5 +4,5 @@ abstract class ParticipationApi {
   Future<void> fetchParticipants(int scheduleId);
 
   /// 該当の予定日に参加する
-  Future<void> participate(int scheduleId);
+  Future<void> participate(int scheduleId, int memberId);
 }
