@@ -1,4 +1,5 @@
 import 'package:core_network/core_network.dart';
+import 'package:core_network/src/member/supabase_member_api.dart';
 import 'package:core_network/src/nito_network_service.dart';
 import 'package:core_network/src/participation/supabase_participation_api.dart';
 import 'package:core_network/src/real_authenticator.dart';
@@ -17,6 +18,13 @@ final rp.Provider<ParticipationApi> participationApiProvider = rp.Provider(
 /// ScheduleApi
 final rp.Provider<ScheduleApi> scheduleApiProvider = rp.Provider(
   (ref) => SupabaseScheduleApi(
+    supabaseClient: ref.read(supabaseClientProvider),
+  ),
+);
+
+/// MemberApi
+final rp.Provider<MemberApi> memberApiProvider = rp.Provider(
+  (ref) => SupabaseMemberApi(
     supabaseClient: ref.read(supabaseClientProvider),
   ),
 );
