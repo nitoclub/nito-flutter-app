@@ -5,13 +5,12 @@ import 'package:core_network/src/participation/supabase_participation_api.dart';
 import 'package:core_network/src/real_authenticator.dart';
 import 'package:core_network/src/schedule/supabase_schedule_api.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' as rp;
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// ParticipationApi
 final rp.Provider<ParticipationApi> participationApiProvider = rp.Provider(
   (ref) => SupabaseParticipationApi(
-    networkService: ref.read(networkServiceProvider),
+    supabaseClient: ref.read(supabaseClientProvider),
   ),
 );
 
@@ -57,7 +56,7 @@ final rp.StreamProvider<AuthState> authStateProvider = rp.StreamProvider(
 );
 
 /// AsyncValue<bool>
-final rp.Provider<AsyncValue<bool>> isSignedInProvider = rp.Provider(
+final rp.Provider<rp.AsyncValue<bool>> isSignedInProvider = rp.Provider(
   (ref) => ref
       .watch(authStateProvider)
       .whenData((value) => value.session?.user != null),
