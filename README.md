@@ -37,4 +37,4 @@ SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 
 ## Others
 
--[Development](docs/Development.md)
+- [Development](docs/Development.md)
