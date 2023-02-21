@@ -35,3 +35,12 @@ scripts:
     select-package:
       flutter: true
       dir-exists: test
+
+  gen:
+    run: |
+      melos exec -- \
+        flutter pub run build_runner build --delete-conflicting-outputs
+    description: Generate code files
+    select-package:
+      dir-exists: lib
+      depends-on: "build_runner"
