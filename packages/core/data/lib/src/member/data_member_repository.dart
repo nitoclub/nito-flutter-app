@@ -9,12 +9,13 @@ class DataMemberRepository implements MemberRepository {
   DataMemberRepository({required MemberApi api}) : _api = api;
 
   @override
-  Future<Member> fetchSelfMember() async => _api.requiredCurrentMember().then(
-        (entity) => Member(
-          id: entity.id,
-          uuid: entity.uuid,
-          lineId: entity.lineId,
-          nickname: entity.nickname,
-        ),
-      );
+  Future<Member> fetchCurrentMember() async =>
+      _api.requiredCurrentMember().then(
+            (entity) => Member(
+              id: entity.id,
+              uuid: entity.uuid,
+              lineId: entity.lineId,
+              nickname: entity.nickname,
+            ),
+          );
 }

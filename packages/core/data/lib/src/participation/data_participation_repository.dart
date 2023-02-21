@@ -12,5 +12,6 @@ class DataParticipationRepository implements ParticipationRepository {
       _api.fetchParticipants(scheduleId);
 
   @override
-  Future<void> participate(int scheduleId) => _api.participate(scheduleId);
+  Future<void> participate(int scheduleId, int memberId) =>
+      _api.participate(scheduleId, memberId);
 }

@@ -10,3 +10,11 @@ final Provider<FetchParticipationSchedulesUseCase>
     participationRepository: ref.read(participationRepositoryProvider),
   ),
 );
+
+/// ParticipateUseCase
+final Provider<ParticipateUseCase> participateUseCase = Provider(
+  (ref) => ParticipateUseCase(
+    memberRepository: ref.read(memberRepositoryProvider),
+    participationRepository: ref.read(participationRepositoryProvider),
+  ),
+);
