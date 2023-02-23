@@ -44,3 +44,11 @@ scripts:
     select-package:
       dir-exists: lib
       depends-on: "build_runner"
+
+  build:prod:web:
+    run: |
+      melos exec -c 1 -- \
+       flutter build web
+    select-package:
+      dir-exists: [lib, web]
+      scope: "frontend"
