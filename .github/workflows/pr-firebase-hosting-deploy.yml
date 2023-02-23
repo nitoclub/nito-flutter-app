@@ -9,13 +9,11 @@ on:
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    runs-on: macos-12
+    runs-on: ubuntu-22.04
 
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
       # 本番環境用の .env を作成
       - name: create .env
@@ -26,42 +24,25 @@ jobs:
           echo SUPABASE_ANON_KEY=${{secrets.SUPABASE_ANON_KEY}} >> .env
         working-directory: ./apps/frontend
 
-      - name: install fvm
-        run: |
-          brew tap leoafarias/fvm
-          brew install fvm
+      - name: Parse Flutter version
+        uses: kuhnroyal/flutter-fvm-config-action@v1
 
-      # .fvm/fvm_config.json に指定された Flutter をインストール
-      - name: setup flutter
-        if: ${{ steps.flutter_cache_id.outputs.cache-hit != 'true' }}
-        run: fvm install
-
-      # パッケージをキャッシュ or キャッシュから復元
-      - name: cache flutter packages
-        uses: actions/cache@v3
-        id: flutter_packages_cache_id
-        env:
-          cache-name: cache-flutter-packages
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
         with:
-          path: |
-            ${{ env.FLUTTER_HOME }}/.pub-cache
-            **/.packages
-            **/.flutter-plugins
-            **/.flutter-plugin-dependencies
-            **/.dart_tool/package_config.json
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          cache: true
 
-      # Melos をインストール
-      - name: install melos
-        run: |
-          dart pub global activate melos
-          export PATH="$PATH":"$HOME/.pub-cache/bin"
-          melos bootstrap
+      - name: Prepare Melos
+        run: echo "MELOS_SDK_PATH=${{ env.FLUTTER_ROOT }}" >> $GITHUB_ENV
+
+      - name: Install Melos
+        uses: bluefireteam/melos-action@v2
 
       # Web ビルドを実行
       - name: web build
-        run: fvm flutter build web
-        working-directory: ./apps/frontend
+        run: melos run build:prod:web
 
       # Firebase Hosting にデプロイ
       - id: deploy
