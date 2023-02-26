@@ -3,7 +3,7 @@ import 'package:core_network/src/di/network_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final supabaseParticipationRegisterApi =
-    FutureProvider.family<void, ParticipationRegisterArgs>(
+    FutureProvider.autoDispose.family<void, ParticipationRegisterArgs>(
   (ref, args) async {
     const table = 'participation';
     final supabaseClient = ref.watch(supabaseClientProvider);
