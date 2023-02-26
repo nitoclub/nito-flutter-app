@@ -2,7 +2,7 @@ import 'package:core_network/src/di/network_provider.dart';
 import 'package:core_network/src/member/model/network_member.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final supabaseCurrentMemberFetchApi = FutureProvider.autoDispose<NetworkMember>(
+final supabaseMemberFetchApi = FutureProvider.autoDispose<NetworkMember>(
   (ref) async {
     const table = 'members';
     final supabaseClient = ref.watch(supabaseClientProvider);
