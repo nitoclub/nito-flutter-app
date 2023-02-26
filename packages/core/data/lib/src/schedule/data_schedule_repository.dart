@@ -11,6 +11,13 @@ class DataScheduleRepository implements ScheduleRepository {
   @override
   Future<List<Schedule>> fetchSchedules() async {
     final response = await _api.fetchSchedules();
-    return response.map((e) => Schedule(date: e.date)).toList();
+    return response
+        .map(
+          (e) => Schedule(
+            id: e.id,
+            date: e.date,
+          ),
+        )
+        .toList();
   }
 }

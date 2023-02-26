@@ -5,10 +5,7 @@ part 'schedule.freezed.dart';
 @freezed
 class Schedule with _$Schedule {
   const factory Schedule({
+    required int id,
     required String date,
   }) = _Schedule;
-}
-
-mixin ScheduleFields {
-  static const date = 'date';
 }
