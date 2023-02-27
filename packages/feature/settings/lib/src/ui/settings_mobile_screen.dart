@@ -1,5 +1,6 @@
 import 'package:core_styleguide/core_styleguide.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SettingsMobileScreen extends StatelessWidget {
@@ -13,6 +14,7 @@ class SettingsMobileScreen extends StatelessWidget {
       appBar: AppBar(
         // TODO(Daichi): l10nに修正
         title: const Text('設定'),
+        automaticallyImplyLeading: !kIsWeb,
       ),
       body: Padding(
         padding: const EdgeInsets.all(Space.x2),
