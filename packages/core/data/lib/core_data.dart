@@ -8,3 +8,5 @@ export 'src/di/data_provider.dart';
 export 'src/member/member_repository.dart';
 export 'src/participation/participation_repository.dart';
 export 'src/schedule/schedule_repository.dart';
+export 'src/member/di/member_fetch_provider.dart';
+export 'src/participation/di/participation_register_provider.dart';
