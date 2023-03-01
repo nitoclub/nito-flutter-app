@@ -4,8 +4,13 @@ import 'package:core_network/src/member/supabase_member_fetch_api.dart';
 import 'package:core_network/src/participation/supabase_participation_register_api.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+/// NetworkProviders
+final networkProviders = <Override>[
+  ...supabaseApiProviders,
+];
+
 /// Supabase
-final supabaseNetworkProviders = <Override>[
+final supabaseApiProviders = <Override>[
   networkMemberFetchProvider.overrideWith(
     (ref) async => await ref.watch(supabaseMemberFetchApi.future),
   ),

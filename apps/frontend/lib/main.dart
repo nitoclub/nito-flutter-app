@@ -34,8 +34,8 @@ void main() async {
   runApp(
     ProviderScope(
       overrides: [
-        ...supabaseNetworkProviders,
-        ...realRepositoryProviders,
+        ...networkProviders,
+        ...dataProviders,
       ],
       child: const App(),
     ),

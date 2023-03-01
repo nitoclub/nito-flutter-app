@@ -1,7 +1,7 @@
 library core_network;
 
 export 'src/authenticator.dart';
-export 'src/supabase_network_providers.dart';
+export 'src/network_providers.dart' show networkProviders;
 export 'src/auth/auth_api.dart';
 export 'src/di/network_provider.dart';
 export 'src/participation/participation_api.dart';
