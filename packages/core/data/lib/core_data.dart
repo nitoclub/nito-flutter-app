@@ -1,6 +1,6 @@
 library core_data;
 
-export 'src/real_repository_providers.dart';
+export 'src/data_providers.dart' show dataProviders;
 export 'src/auth/auth_repository.dart';
 export 'src/auth/auth_repository2.dart';
 export 'src/auth/di/data_auth_repository_provider.dart';
