@@ -1,4 +1,4 @@
-import 'package:core_data/core_data.dart';
+import 'package:core_network/core_network.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -33,7 +33,7 @@ void main() async {
   runApp(
      ProviderScope(
       overrides: [
-        ...supabaseOverrideProvider,
+        ...supabaseOverrideNetworkProvider,
       ],
       child: const App(),
     ),
