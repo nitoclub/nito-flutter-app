@@ -32,7 +32,7 @@ void main() async {
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   runApp(
-     ProviderScope(
+    ProviderScope(
       overrides: [
         ...supabaseNetworkProviders,
         ...realRepositoryProviders,
