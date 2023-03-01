@@ -8,7 +8,7 @@ final supabaseParticipationRegisterApi =
     const table = 'participation';
     final supabaseClient = ref.watch(supabaseClientProvider);
     // ログインユーザーのメンバー情報を取得
-    final member = await ref.watch(memberFetchProvider.future);
+    final member = await ref.watch(networkMemberFetchProvider.future);
     // 参加を登録する
     await supabaseClient.from(table).insert({
       "schedule_id": scheduleId,
