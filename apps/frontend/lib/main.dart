@@ -1,3 +1,4 @@
+import 'package:core_network/core_network.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -30,8 +31,11 @@ void main() async {
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   runApp(
-    const ProviderScope(
-      child: App(),
+     ProviderScope(
+      overrides: [
+        ...supabaseOverrideNetworkProvider,
+      ],
+      child: const App(),
     ),
   );
 }

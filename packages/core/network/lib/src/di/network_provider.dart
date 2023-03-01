@@ -1,4 +1,5 @@
 import 'package:core_network/core_network.dart';
+import 'package:core_network/src/member/model/network_member.dart';
 import 'package:core_network/src/member/supabase_member_api.dart';
 import 'package:core_network/src/nito_network_service.dart';
 import 'package:core_network/src/participation/supabase_participation_api.dart';
@@ -67,4 +68,15 @@ final rp.Provider<Authenticator> authenticatorProvider = rp.Provider(
   (ref) => RealAuthenticator(
     client: ref.watch(goTrueClientProvider),
   ),
+);
+
+/// NetworkMember
+final networkMemberFetchProvider = rp.FutureProvider.autoDispose<NetworkMember>(
+  (ref) async => throw UnimplementedError(),
+);
+
+/// void
+final networkParticipationRegisterProvider =
+    rp.FutureProvider.autoDispose.family<void, int>(
+  (ref, scheduleId) async => throw UnimplementedError(),
 );

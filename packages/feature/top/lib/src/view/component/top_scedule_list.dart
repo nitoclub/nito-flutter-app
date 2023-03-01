@@ -8,9 +8,9 @@ class TopScheduleList extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncData = ref.watch(topScheduleListProvider);
+    final asyncSchedule = ref.watch(topScheduleListProvider);
 
-    return asyncData.when(
+    return asyncSchedule.when(
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (err, stk) {
         return Center(
@@ -20,16 +20,17 @@ class TopScheduleList extends HookConsumerWidget {
           ),
         );
       },
-      data: (data) {
+      data: (schedule) {
         // FIXME(Daichi): 引っ張り更新を可能にする
         return Padding(
           padding: const EdgeInsets.all(10),
           child: ListView.separated(
             physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: data.length,
+            itemCount: schedule.length,
             itemBuilder: (BuildContext context, int index) {
               return TopScheduleListTile(
-                dateString: data[index].date,
+                dateString: schedule[index].date,
+                scheduleId: schedule[index].id,
                 isNext: index == 0,
               );
             },

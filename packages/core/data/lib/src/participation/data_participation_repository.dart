@@ -1,17 +1,18 @@
-import 'package:core_data/core_data.dart';
 import 'package:core_network/core_network.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-/// 参加情報のデータ操作リポジトリ
-class DataParticipationRepository implements ParticipationRepository {
-  final ParticipationApi _api;
+final participationRepositoryProvider =
+    Provider((ref) => DataParticipationRepository(ref: ref));
 
-  DataParticipationRepository({required ParticipationApi api}) : _api = api;
+class DataParticipationRepository {
+  DataParticipationRepository({
+    required Ref ref,
+  }) : _ref = ref;
 
-  @override
-  Future<void> fetchParticipants(int scheduleId) =>
-      _api.fetchParticipants(scheduleId);
+  final Ref _ref;
 
-  @override
-  Future<void> participate(int scheduleId, int memberId) =>
-      _api.participate(scheduleId, memberId);
+  /// 参加登録ぅ
+  Future<void> insert(int scheduleId) async {
+    await _ref.read(networkParticipationRegisterProvider(scheduleId).future);
+  }
 }
