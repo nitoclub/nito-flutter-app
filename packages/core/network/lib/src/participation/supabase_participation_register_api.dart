@@ -1,16 +1,18 @@
-import 'package:core_model/core_model.dart';
 import 'package:core_network/src/di/network_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+// FIXME(Daichi): riverpod_generatorで引数を２つにする
 final supabaseParticipationRegisterApi =
-    FutureProvider.autoDispose.family<void, ParticipationRegisterArgs>(
-  (ref, args) async {
+    FutureProvider.autoDispose.family<void, int>(
+  (ref, scheduleId) async {
     const table = 'participation';
     final supabaseClient = ref.watch(supabaseClientProvider);
+    // ログインユーザーのメンバー情報を取得
+    final member = await ref.watch(memberFetchProvider.future);
     // 参加を登録する
     await supabaseClient.from(table).insert({
-      "schedule_id": args.scheduleId,
-      "member_id": args.memberId,
+      "schedule_id": scheduleId,
+      "member_id": member.id,
     });
   },
 );
