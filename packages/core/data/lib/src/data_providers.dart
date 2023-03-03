@@ -1,12 +1,12 @@
+import 'package:core_data/src/auth/offline_first_auth_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'auth/real_auth_repository.dart';
 
 /// DataProviders
 final dataProviders = <Override>[
-  ...realRepositoryProviders,
+  ...offlineFirstRepositoryProviders,
 ];
 
 /// Real
-final realRepositoryProviders = <Override>[
-  realAuthRepositoryProvider,
+final offlineFirstRepositoryProviders = <Override>[
+  offlineFirstAuthRepositoryProvider,
 ];
