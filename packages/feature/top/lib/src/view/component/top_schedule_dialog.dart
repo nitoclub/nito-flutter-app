@@ -15,7 +15,7 @@ class TopScheduleDialog extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final repository = ref.watch(participationRepositoryProvider);
+    final repository = ref.watch(legacyParticipationRepositoryProvider);
 
     return AlertDialog(
       title: const Text('参加登録'),
