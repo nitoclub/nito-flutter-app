@@ -1,3 +1,9 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+final participationApiProvider = FutureProvider.autoDispose<ParticipationApi>(
+      (ref) => throw UnimplementedError(),
+);
+
 /// 参加情報API
 abstract class ParticipationApi {
   /// 参加者一覧を取得する
