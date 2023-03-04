@@ -1,8 +1,8 @@
-import 'package:core_data/src/auth/auth_repository.dart';
+import 'package:core_data/src/auth/legacy_auth_repository.dart';
 import 'package:core_network/core_network.dart';
 
 /// 認証系のデータ操作リポジトリ
-class DataAuthRepository implements AuthRepository {
+class DataAuthRepository implements LegacyAuthRepository {
   final Authenticator _authenticator;
 
   DataAuthRepository({required Authenticator authenticator})

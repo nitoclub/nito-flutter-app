@@ -6,7 +6,7 @@ import 'package:feature_auth/src/login/login_page_state.dart';
 final loginPageController =
     StateNotifierProvider<LoginPageController, LoginPageState>(
   (ref) => LoginPageController(
-    ref.read(authRepositoryProvider),
+    ref.read(legacyAuthRepositoryProvider),
   ),
 );
 
@@ -16,7 +16,7 @@ class LoginPageController extends StateNotifier<LoginPageState> {
         passwordController = TextEditingController(text: ''),
         super(const LoginPageState());
 
-  final AuthRepository _authRepository;
+  final LegacyAuthRepository _authRepository;
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
