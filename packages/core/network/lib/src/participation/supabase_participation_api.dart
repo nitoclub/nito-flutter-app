@@ -1,6 +1,11 @@
-import 'package:core_network/src/nito_network_service.dart';
-import 'package:core_network/src/participation/participation_api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+final supabaseParticipationApiProvider = participationApiProvider.overrideWith(
+  (ref) => SupabaseParticipationApi(
+    supabaseClient: ref.watch(supabaseClientProvider),
+  ),
+);
 
 /// 参加情報API を SupabaseClient で実装したクラス
 class SupabaseParticipationApi implements ParticipationApi {

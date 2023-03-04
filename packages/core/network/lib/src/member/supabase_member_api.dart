@@ -1,6 +1,12 @@
-import 'package:core_network/src/member/member_api.dart';
+import 'package:core_network/core_network.dart';
 import 'package:core_network/src/member/model/network_member.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+final supabaseMemberApiProvider = memberApiProvider.overrideWith(
+  (ref) => SupabaseMemberApi(
+    supabaseClient: ref.watch(supabaseClientProvider),
+  ),
+);
 
 /// メンバーAPI を SupabaseClient で実装したクラス
 class SupabaseMemberApi implements MemberApi {
