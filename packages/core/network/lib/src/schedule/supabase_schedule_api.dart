@@ -3,7 +3,7 @@ import 'package:core_network/src/schedule/model/network_schedule.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 final supabaseScheduleApiProvider = scheduleApiProvider.overrideWith(
-      (ref) => SupabaseScheduleApi(
+  (ref) => SupabaseScheduleApi(
     supabaseClient: ref.watch(supabaseClientProvider),
   ),
 );
