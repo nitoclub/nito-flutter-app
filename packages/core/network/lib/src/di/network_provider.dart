@@ -1,10 +1,12 @@
 import 'package:core_network/core_network.dart';
-import 'package:core_network/src/member/model/network_member.dart';
 import 'package:core_network/src/nito_network_service.dart';
 import 'package:core_network/src/real_authenticator.dart';
 import 'package:core_network/src/schedule/supabase_schedule_api.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' as rp;
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+part 'network_provider.g.dart';
 
 /// ScheduleApi
 final rp.Provider<ScheduleApi> legacyScheduleApiProvider = rp.Provider(
@@ -54,13 +56,13 @@ final rp.Provider<Authenticator> authenticatorProvider = rp.Provider(
   ),
 );
 
-/// NetworkMember
-final networkMemberFetchProvider = rp.FutureProvider.autoDispose<NetworkMember>(
-  (ref) async => throw UnimplementedError(),
-);
-
 /// void
-final networkParticipationRegisterProvider =
-    rp.FutureProvider.autoDispose.family<void, int>(
-  (ref, scheduleId) async => throw UnimplementedError(),
+@riverpod
+Future<void> networkParticipationRegister(
+        NetworkParticipationRegisterRef ref) async =>
+    throw UnimplementedError();
+
+/// int
+final networkScheduleIdForParticipationProvider = rp.StateProvider(
+  (ref) => 0,
 );
