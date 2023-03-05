@@ -13,6 +13,8 @@ class DataParticipationRepository {
 
   /// 参加登録ぅ
   Future<void> insert(int scheduleId) async {
-    await _ref.read(networkParticipationRegisterProvider(scheduleId).future);
+    _ref.watch(networkScheduleIdForParticipationProvider.notifier).state =
+        scheduleId;
+    await _ref.read(networkParticipationRegisterProvider.future);
   }
 }
