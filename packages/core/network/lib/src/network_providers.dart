@@ -14,13 +14,16 @@ final networkProviders = <Override>[
 
 /// Supabase
 final supabaseApiProviders = <Override>[
-  networkMemberFetchProvider.overrideWith(
-    (ref) async => await ref.watch(supabaseMemberFetchApi.future),
-  ),
-  networkParticipationRegisterProvider.overrideWith(
-    (ref, scheduleId) async =>
-        await ref.watch(supabaseParticipationRegisterApi(scheduleId).future),
-  ),
+  networkParticipationRegisterProvider.overrideWith((ref) async {
+    // memberIdを取得
+    final memberId = await ref.watch(
+        supabaseMemberFetchApiProvider.selectAsync((member) => member.id));
+    // schduleIdを取得
+    final scheduleId = ref.watch(networkScheduleIdForParticipationProvider);
+    await ref.watch(supabaseParticipationRegisterApiProvider(
+            memberId: memberId, scheduleId: scheduleId)
+        .future);
+  }),
   supabaseAuthApiProvider,
   supabaseMemberApiProvider,
   supabaseParticipationApiProvider,
