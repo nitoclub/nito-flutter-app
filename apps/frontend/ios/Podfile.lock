@@ -2,6 +2,12 @@ PODS:
   - app_links (0.0.1):
     - Flutter
   - Flutter (1.0.0)
+  - flutter_line_sdk (2.3.2):
+    - Flutter
+    - LineSDKSwift (~> 5.3)
+  - LineSDKSwift (5.9.0):
+    - LineSDKSwift/Core (= 5.9.0)
+  - LineSDKSwift/Core (5.9.0)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -11,14 +17,21 @@ PODS:
 DEPENDENCIES:
   - app_links (from `.symlinks/plugins/app_links/ios`)
   - Flutter (from `Flutter`)
+  - flutter_line_sdk (from `.symlinks/plugins/flutter_line_sdk/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - LineSDKSwift
 
 EXTERNAL SOURCES:
   app_links:
     :path: ".symlinks/plugins/app_links/ios"
   Flutter:
     :path: Flutter
+  flutter_line_sdk:
+    :path: ".symlinks/plugins/flutter_line_sdk/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
   url_launcher_ios:
@@ -27,6 +40,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   app_links: ab4ba54d10a13d45825336bc9707b5eadee81191
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_line_sdk: ec4b8b8ea31a7a373e3e2f7c11f46ad0f3c6135a
+  LineSDKSwift: 97d6306ca17ae41520f29eb5dff4077dd81f08b2
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   url_launcher_ios: fb12c43172927bb5cf75aeebd073f883801f1993
 

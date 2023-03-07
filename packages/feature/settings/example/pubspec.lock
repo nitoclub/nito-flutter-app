@@ -177,10 +177,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_line_sdk
-      sha256: "5fd007e8d81868d10bfeb3849d0dae75f8359bcf1c5e45279b6a70a1983409a1"
+      sha256: "391b3ac04a0e3a4b8bc83929e65dfc7950145c783698f696cac874941bfd2cb8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.1"
+    version: "2.3.2"
   flutter_lints:
     dependency: "direct dev"
     description:
