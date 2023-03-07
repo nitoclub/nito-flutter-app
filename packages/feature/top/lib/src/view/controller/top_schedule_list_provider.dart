@@ -3,5 +3,5 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final topScheduleListProvider = FutureProvider.autoDispose(
   (ref) async =>
-      await ref.watch(legacyScheduleRepositoryProvider).fetchSchedules(),
+      await ref.watch(legacyScheduleRepositoryProvider).fetchUpcomingSchedules(),
 );

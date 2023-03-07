@@ -7,6 +7,12 @@ final scheduleApiProvider = FutureProvider.autoDispose<ScheduleApi>(
 
 /// スケジュールAPI
 abstract class ScheduleApi {
+  /// 直近のスケジュールを取得する
+  Future<NetworkSchedule?> fetchRecentSchedule();
+
   /// スケジュール一覧を取得する
   Future<List<NetworkSchedule>> fetchSchedules();
+
+  /// 今後のスケジュール一覧を取得する
+  Future<List<NetworkSchedule>> fetchUpcomingSchedules();
 }
