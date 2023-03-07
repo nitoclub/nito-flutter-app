@@ -1,5 +1,6 @@
 import 'package:core_network/core_network.dart';
 import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_schedule/feature_schedule.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:feature_top/feature_top.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,10 @@ final routerProvider = Provider<GoRouter>(
       GoRoute(
         path: '/settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/schedule',
+        builder: (context, state) => const SchedulePage(),
       ),
       // 引数付きの場合は以下のように作成する
       // GoRoute(
