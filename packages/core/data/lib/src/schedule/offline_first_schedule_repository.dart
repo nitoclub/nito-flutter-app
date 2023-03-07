@@ -16,8 +16,8 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
   OfflineFirstScheduleRepository({required ScheduleApi api}) : _api = api;
 
   @override
-  Future<List<Schedule>> fetchSchedules() async {
-    final response = await _api.fetchSchedules();
+  Future<List<Schedule>> legacyFetchSchedules() async {
+    final response = await _api.legacyFetchSchedules();
     return response
         .map(
           (e) => Schedule(

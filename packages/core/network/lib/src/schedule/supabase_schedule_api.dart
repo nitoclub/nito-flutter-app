@@ -18,7 +18,7 @@ class SupabaseScheduleApi implements ScheduleApi {
       : _supabaseClient = supabaseClient;
 
   @override
-  Future<List<NetworkSchedule>> fetchSchedules() async {
+  Future<List<NetworkSchedule>> legacyFetchSchedules() async {
     final val = await _supabaseClient
         .from(_table)
         .select('*')

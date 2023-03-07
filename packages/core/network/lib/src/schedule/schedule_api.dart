@@ -8,5 +8,6 @@ final scheduleApiProvider = FutureProvider.autoDispose<ScheduleApi>(
 /// スケジュールAPI
 abstract class ScheduleApi {
   /// スケジュール一覧を取得する
-  Future<List<NetworkSchedule>> fetchSchedules();
+  @Deprecated('Please use the functions we plan to add in the future.')
+  Future<List<NetworkSchedule>> legacyFetchSchedules();
 }

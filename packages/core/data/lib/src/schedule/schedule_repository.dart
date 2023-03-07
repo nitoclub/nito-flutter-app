@@ -9,5 +9,6 @@ final scheduleRepositoryProvider =
 /// スケジュールリポジトリ
 abstract class ScheduleRepository {
   /// スケジュール一覧を取得する
-  Future<List<Schedule>> fetchSchedules();
+  @Deprecated('Please use the functions we plan to add in the future.')
+  Future<List<Schedule>> legacyFetchSchedules();
 }
