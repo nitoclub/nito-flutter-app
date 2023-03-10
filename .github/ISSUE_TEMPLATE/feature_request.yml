@@ -6,14 +6,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        この度は、バグレポートにご協力いただき、ありがとうございました。
+        この度は機能要望にご協力いただき、ありがとうございました。
 
   - type: checkboxes
     attributes:
-      label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for this feature request.
+      label: 既存の課題がありませんか？
+      description: この機能要求に対してすでに課題が存在するかどうか、検索してください。
       options:
-        - label: I have searched the existing issues
+        - label: 既存の課題を検索してみました
           required: true
 
   - type: textarea
@@ -21,7 +21,7 @@ body:
     attributes:
       label: 問題を説明する
       description: 機能要望は問題に関連するものですか？説明してください。
-      placeholder: I'm always frustrated when...
+      placeholder: いつも悔しい思いをするのは
     validations:
       required: true
 
