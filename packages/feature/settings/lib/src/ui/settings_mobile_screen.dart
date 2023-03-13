@@ -1,5 +1,6 @@
 import 'package:core_styleguide/core_styleguide.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:feature_settings/src/ui/component/oss_licenses_section.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,8 @@ class SettingsMobileScreen extends StatelessWidget {
             LineLinkingSection(
               isLineLinked: true,
               onLineLinkingTogglePressed: () {},
-            )
+            ),
+            const OssLicensesSection(),
           ],
         ),
       ),
