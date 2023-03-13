@@ -10,7 +10,6 @@ packages:
 ide:
   intellij:
     enabled: true
-    moduleNamePrefix: nito_
 
 command:
   bootstrap:
