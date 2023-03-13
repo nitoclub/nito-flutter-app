@@ -13,7 +13,6 @@ ide:
 
 command:
   bootstrap:
-    usePubspecOverrides: true
     runPubGetInParallel: true
 
 scripts:
@@ -22,32 +21,32 @@ scripts:
       melos exec -- \
         flutter format --dry-run --set-exit-if-changed lib/
     description: Format in all packages
-    select-package:
+    packageFilters:
       flutter: true
-      dir-exists: lib
+      dirExists: lib
 
   test:
     run: |
       melos exec --fail-fast -- \
         flutter test --coverage
     description: flutter test in all packages
-    select-package:
+    packageFilters:
       flutter: true
-      dir-exists: test
+      dirExists: test
 
   gen:
     run: |
       melos exec -- \
         flutter pub run build_runner build --delete-conflicting-outputs
     description: Generate code files
-    select-package:
-      dir-exists: lib
-      depends-on: "build_runner"
+    packageFilters:
+      dirExists: lib
+      dependsOn: "build_runner"
 
   build:prod:web:
     run: |
       melos exec -c 1 -- \
        flutter build web
-    select-package:
-      dir-exists: [lib, web]
+    packageFilters:
+      dirExists: [lib, web]
       scope: "frontend"
