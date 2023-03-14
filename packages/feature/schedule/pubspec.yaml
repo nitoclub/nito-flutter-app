@@ -10,7 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hooks_riverpod: ^2.3.2
   plugin_platform_interface: ^2.0.2
+  core_model:
+    path: ../../core/model
+  core_data:
+    path: ../../core/data
+  core_domain:
+    path: ../../core/domain
 
 dev_dependencies:
   flutter_test:
