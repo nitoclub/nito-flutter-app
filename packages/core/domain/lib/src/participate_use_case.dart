@@ -4,9 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 final participateUseCaseProvider =
     FutureProvider.autoDispose<ParticipateUseCase>(
   (ref) async => ParticipateUseCase(
-    memberRepository: await ref.watch(memberRepositoryProvider.future),
-    participationRepository:
-        await ref.watch(participationRepositoryProvider.future),
+    memberRepository: ref.watch(memberRepositoryProvider),
+    participationRepository: ref.watch(participationRepositoryProvider),
   ),
 );
 

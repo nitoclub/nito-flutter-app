@@ -1,11 +1,10 @@
 import 'package:core_data/core_data.dart';
-import 'package:core_model/core_model.dart';
 import 'package:core_network/core_network.dart';
 
 final offlineFirstParticipationRepositoryProvider =
     participationRepositoryProvider.overrideWith(
-  (ref) async => OfflineFirstParticipationRepository(
-    participationApi: await ref.watch(participationApiProvider.future),
+  (ref)  => OfflineFirstParticipationRepository(
+    participationApi: ref.watch(participationApiProvider),
   ),
 );
 

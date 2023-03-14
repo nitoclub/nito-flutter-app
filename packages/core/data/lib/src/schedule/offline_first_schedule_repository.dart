@@ -5,8 +5,8 @@ import 'package:core_network/core_network.dart';
 
 final offlineFirstScheduleRepositoryProvider =
     scheduleRepositoryProvider.overrideWith(
-  (ref) async => OfflineFirstScheduleRepository(
-    api: await ref.watch(scheduleApiProvider.future),
+  (ref) => OfflineFirstScheduleRepository(
+    api: ref.watch(scheduleApiProvider),
   ),
 );
 

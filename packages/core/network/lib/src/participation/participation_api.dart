@@ -1,6 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final participationApiProvider = FutureProvider.autoDispose<ParticipationApi>(
+final participationApiProvider = Provider.autoDispose<ParticipationApi>(
   (ref) => throw UnimplementedError(),
 );
 
