@@ -43,8 +43,6 @@ jobs:
 
       - name: Install Melos
         uses: bluefireteam/melos-action@v2
-        with:
-          melos-version: '2.9.0'
 
       # Web ビルドを実行
       - name: web build
