@@ -77,3 +77,42 @@ autolabeler:
       - '/^:books: .+/'
     files:
       - '*.md'
+  - label: '@core/common'
+    files:
+      - 'packages/core/common/**/*'
+  - label: '@core/data'
+    files:
+      - 'packages/core/data/**/*'
+  - label: '@core/database'
+    files:
+      - 'packages/core/database/**/*'
+  - label: '@core/domain'
+    files:
+      - 'packages/core/domain/**/*'
+  - label: '@core/model'
+    files:
+      - 'packages/core/model/**/*'
+  - label: '@core/network'
+    files:
+      - 'packages/core/network/**/*'
+  - label: '@core/styleguide'
+    files:
+      - 'packages/core/styleguide/**/*'
+  - label: '@core/testing'
+    files:
+      - 'packages/core/testing/**/*'
+  - label: '@core/ui'
+    files:
+      - 'packages/core/ui/**/*'
+  - label: '@feature/auth'
+    files:
+      - 'packages/feature/auth/**/*'
+  - label: '@feature/schedule'
+    files:
+      - 'packages/feature/schedule/**/*'
+  - label: '@feature/settings'
+    files:
+      - 'packages/feature/settings/**/*'
+  - label: '@feature/top'
+    files:
+      - 'packages/feature/top/**/*'
