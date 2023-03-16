@@ -10,8 +10,6 @@ categories:
       - 'enhancement'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
-      - 'bugfix'
       - 'bug'
   - title: '🧰 Maintenance'
     label: 'chore'
@@ -47,34 +45,35 @@ template: |
   $CHANGES
 
 autolabeler:
+  - label: enhancement
+    title:
+      - '/^:tada: .+/'
+  - label: major
+    title:
+      - '/^:tada: .+/'
   - label: feature
     title:
       - '/^:sparkles: .+/'
+  - label: minor
+    title:
+      - '/^:sparkles: .+/'
   - label: bug
-    branch:
-      - '/^fix[/-].+/'
+    title:
+      - '/^:bug: .+/'
+  - label: patch
     title:
       - '/^:bug: .+/'
   - label: chore
-    branch:
-      - '/^chore[/-].+/'
     title:
       - '/^:wrench: .+/'
+  - label: dependencies
+    title:
       - '/^:up: .+/'
   - label: refactor
-    branch:
-      - '/(refactor|refactoring)[/-].+/'
     title:
       - '/^:recycle: .+/'
   - label: documentation
-    branch:
-      - '/doc(umentation)[/-].+/'
     title:
       - '/^:books: .+/'
     files:
       - '*.md'
-  - label: enhancement
-    branch:
-      - '/(enhancement|improve)[/-].+/'
-    title:
-      - '/^:tada: .+/'
