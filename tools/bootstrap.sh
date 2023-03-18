@@ -69,31 +69,6 @@ echo "🚀 Melos: Finished"
 
 ##############################################################################
 ##
-##  Supabase
-##
-##############################################################################
-echo ""
-echo "🚀 Supabase: Start"
-if type docker >/dev/null 2>&1; then
-  if type supabase >/dev/null 2>&1; then
-    if [ -z "$(docker container ls -q -f name="supabase_db_nito")" ]; then
-      supabase login
-      supabase link --project-ref hwxxihvcszfhaxlguajv
-      supabase start
-    else
-      echo "⚠️ Supabase: Skip this step as the Supabase container has already been started."
-    fi
-    supabase gen types typescript --linked --schema public >supabase/functions/_shared/schema.ts
-  else
-    echo "⚠️ Supabase: The process has been skipped as the supabase command could not be found."
-  fi
-else
-  echo "⚠️ Supabase: Docker is required for NITO development, but since it is not present, we will skip it."
-fi
-echo "🚀 Supabase: Finished"
-
-##############################################################################
-##
 ##  Finish
 ##
 ##############################################################################

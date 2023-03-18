@@ -1,7 +1,0 @@
-# Supabase
-.branches
-.temp
-/functions/_shared/schema.ts
-
-# IntelliJ
-/functions/.idea/
