@@ -1,4 +1,4 @@
-import 'package:feature_top/src/ui/top_scedule_list.dart';
+import 'package:feature_top/src/ui/top_page_body.dart';
 import 'package:flutter/material.dart';
 
 class TopPageForMobile extends StatelessWidget {
@@ -15,14 +15,14 @@ class TopPageForMobile extends StatelessWidget {
       // TODO(Daichi): Themeでスタイルを決める
       appBar: AppBar(
         // TODO(Daichi): l10nに修正
-        title: const Text('今後のスケジュール'),
+        title: const Text('トップ'),
         actions: [
           IconButton(
               onPressed: _onSettingsActionPressed,
               icon: const Icon(Icons.settings))
         ],
       ),
-      body: const TopScheduleList(),
+      body: const TopPageBody(),
     );
   }
 }
