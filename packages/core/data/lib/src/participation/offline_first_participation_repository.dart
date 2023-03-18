@@ -3,7 +3,7 @@ import 'package:core_network/core_network.dart';
 
 final offlineFirstParticipationRepositoryProvider =
     participationRepositoryProvider.overrideWith(
-  (ref)  => OfflineFirstParticipationRepository(
+  (ref) => OfflineFirstParticipationRepository(
     participationApi: ref.watch(participationApiProvider),
   ),
 );
