@@ -1,7 +1,7 @@
 import 'package:core_network/src/member/model/network_member.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final memberApiProvider = FutureProvider.autoDispose<MemberApi>(
+final memberApiProvider = Provider.autoDispose<MemberApi>(
   (ref) => throw UnimplementedError(),
 );
 

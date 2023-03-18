@@ -4,8 +4,8 @@ import 'package:core_network/core_network.dart';
 
 final offlineFirstMemberRepositoryProvider =
     memberRepositoryProvider.overrideWith(
-  (ref) async => OfflineFirstMemberRepository(
-    memberApi: await ref.watch(memberApiProvider.future),
+  (ref) => OfflineFirstMemberRepository(
+    memberApi: ref.watch(memberApiProvider),
   ),
 );
 
