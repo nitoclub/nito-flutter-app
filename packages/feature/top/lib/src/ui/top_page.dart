@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:feature_top/src/view/component/top_page_for_mobile.dart';
+import 'package:feature_top/src/ui/top_page_for_mobile.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage(

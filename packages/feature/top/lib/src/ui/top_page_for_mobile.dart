@@ -1,4 +1,4 @@
-import 'package:feature_top/src/view/component/top_scedule_list.dart';
+import 'package:feature_top/src/ui/top_scedule_list.dart';
 import 'package:flutter/material.dart';
 
 class TopPageForMobile extends StatelessWidget {

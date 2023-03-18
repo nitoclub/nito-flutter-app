@@ -1,5 +1,5 @@
-import 'package:feature_top/src/view/component/top_schedule_list_tile.dart';
-import 'package:feature_top/src/view/controller/top_schedule_list_provider.dart';
+import 'package:feature_top/src/ui/top_schedule_list_tile.dart';
+import 'package:feature_top/src/provider/top_schedule_list_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

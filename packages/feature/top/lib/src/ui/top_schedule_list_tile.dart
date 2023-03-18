@@ -1,4 +1,4 @@
-import 'package:feature_top/src/view/component/top_schedule_dialog.dart';
+import 'package:feature_top/src/ui/top_schedule_dialog.dart';
 import 'package:flutter/material.dart';
 
 class TopScheduleListTile extends StatelessWidget {
