@@ -1,4 +1,4 @@
-import 'package:core_data/core_data.dart';
+import 'package:core_domain/core_domain.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,8 +15,6 @@ class TopScheduleDialog extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final repository = ref.watch(legacyParticipationRepositoryProvider);
-
     return AlertDialog(
       title: const Text('参加登録'),
       content: Text('$_dateStringの\nトランポリンに参加しますか？'),
@@ -29,7 +27,7 @@ class TopScheduleDialog extends HookConsumerWidget {
         TextButton(
           child: const Text('参加する'),
           onPressed: () async {
-            await repository.insert(_scheduleId);
+            await ref.watch(participateUseCaseProvider)(_scheduleId);
             if (context.mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
