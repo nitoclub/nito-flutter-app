@@ -40,3 +40,4 @@ SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ## Others
 
 - [Development](docs/Development.md)
+- [For Windows](docs/ForWindows.md)
