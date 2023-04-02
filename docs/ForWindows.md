@@ -4,6 +4,10 @@
 
 インストール系の操作は Powershell を管理者権限で実行する前提とします。
 
+## 開発者モードの有効化
+
+https://paso-kake.com/it/windows11/18020/
+
 ## `Chocolatey` のインストール
 
 `Chocolatey` は、Windows でのパッケージ管理を簡単にするためのツールです。
