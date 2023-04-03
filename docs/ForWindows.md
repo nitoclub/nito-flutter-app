@@ -61,3 +61,11 @@ dart pub global activate fvm
 ```powershell
 dart pub upgrade
 ```
+
+## `bootstrap` スクリプトの実行
+
+以下のコマンドを実行してください。
+
+```powershell
+powershell -ExecutionPolicy RemoteSigned -File .\tools\bootstrap.ps1
+```
