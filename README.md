@@ -1,3 +1,6 @@
+[![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/invertase/melos)
+[![Deploy to Firebase Hosting on merge](https://github.com/2rabs/nito-app/actions/workflows/prod-firebase-hosting-deploy.yml/badge.svg)](https://github.com/2rabs/nito-app/actions/workflows/prod-firebase-hosting-deploy.yml)
+
 # NITO
 
 NITO アプリです。
