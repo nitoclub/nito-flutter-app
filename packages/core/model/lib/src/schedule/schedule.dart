@@ -7,5 +7,6 @@ class Schedule with _$Schedule {
   const factory Schedule({
     required int id,
     required String date,
+    required bool isFinished,
   }) = _Schedule;
 }

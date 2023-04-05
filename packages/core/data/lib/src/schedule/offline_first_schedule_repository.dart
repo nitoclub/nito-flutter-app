@@ -23,6 +23,7 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
       (it) => Schedule(
         id: it.id,
         date: it.date,
+        isFinished: false,
       ),
     );
   }
@@ -30,11 +31,14 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
   @override
   Future<List<Schedule>> fetchSchedules() async {
     final networkSchedules = await _api.fetchSchedules();
+    final now = DateTime.now();
+
     return networkSchedules
         .map(
           (it) => Schedule(
             id: it.id,
             date: it.date,
+            isFinished: DateTime.parse(it.date).isBefore(now),
           ),
         )
         .toList();
@@ -48,6 +52,7 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
           (e) => Schedule(
             id: e.id,
             date: e.date,
+            isFinished: false,
           ),
         )
         .toList();
