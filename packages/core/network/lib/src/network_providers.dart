@@ -1,5 +1,6 @@
 import 'package:core_network/core_network.dart';
 import 'package:core_network/src/auth/supabase_auth_api.dart';
+import 'package:core_network/src/entrance/supabase_entrance_api.dart';
 import 'package:core_network/src/member/supabase_member_api.dart';
 import 'package:core_network/src/member/supabase_member_fetch_api.dart';
 import 'package:core_network/src/participation/supabase_participation_api.dart';
@@ -25,4 +26,5 @@ final supabaseApiProviders = <Override>[
   supabaseMemberApiProvider,
   supabaseParticipationApiProvider,
   supabaseScheduleApiProvider,
+  supabaseEntranceApiProvider,
 ];
