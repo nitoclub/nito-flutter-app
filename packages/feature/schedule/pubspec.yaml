@@ -18,6 +18,10 @@ dependencies:
     path: ../../core/data
   core_domain:
     path: ../../core/domain
+  core_ui:
+    path: ../../core/ui
+  core_styleguide:
+    path: ../../core/styleguide
 
 dev_dependencies:
   flutter_test:
