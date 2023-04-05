@@ -57,6 +57,7 @@ autolabeler:
   - label: minor
     title:
       - '/^:sparkles: .+/'
+      - '/^:+1: .+/'
   - label: bug
     title:
       - '/^:bug: .+/'
