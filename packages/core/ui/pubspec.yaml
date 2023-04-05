@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   core_common:
     path: ../common
+  core_model:
+    path: ../model
   core_styleguide:
     path: ../styleguide
 
