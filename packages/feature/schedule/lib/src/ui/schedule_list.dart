@@ -13,11 +13,18 @@ class ScheduleList extends HookConsumerWidget {
     return asyncScheduleList.when(
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (err, stk) {
-        return Center(
-          child: IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: () => ref.refresh(scheduleListProvider),
-          ),
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('エラーが発生しました'),
+            Text(err.toString()),
+            Center(
+              child: IconButton(
+                icon: const Icon(Icons.refresh),
+                onPressed: () => ref.refresh(scheduleListProvider),
+              ),
+            ),
+          ],
         );
       },
       data: (schedule) {

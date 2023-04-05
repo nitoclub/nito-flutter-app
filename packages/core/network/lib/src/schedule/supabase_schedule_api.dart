@@ -37,10 +37,9 @@ class SupabaseScheduleApi implements ScheduleApi {
         .from(_table)
         .select('*')
         .is_(NetworkScheduleFields.deletedAt, null)
-        .order(NetworkScheduleFields.date, ascending: false)
-        // FIXME: 取得件数などを指定できるようにする
+        .order(NetworkScheduleFields.date)
         .limit(30);
-    final castedList = data as List<Map<String, dynamic>>;
+    final castedList = data as List<dynamic>;
     return castedList.map((e) => NetworkSchedule.fromJson(e)).toList();
   }
 
