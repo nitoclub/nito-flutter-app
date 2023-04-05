@@ -25,7 +25,7 @@ class SupabaseMemberApi implements MemberApi {
         .is_(NetworkMemberFields.deletedAt, null)
         .eq(NetworkMemberFields.uuid, uuid)
         .maybeSingle();
-    return member ? NetworkMember.fromJson(member) : null;
+    return member != null ? NetworkMember.fromJson(member) : null;
   }
 
   @override
