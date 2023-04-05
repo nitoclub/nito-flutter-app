@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-ThemeData darkTheme(ColorScheme? darkDynamic) {
+ThemeData darkTheme({
+  ColorScheme? darkDynamic,
+  String? fontFamily,
+}) {
   final scheme = darkDynamic ??
       // #8d93c8 is pansy
       ColorScheme.fromSeed(
@@ -9,5 +12,6 @@ ThemeData darkTheme(ColorScheme? darkDynamic) {
       );
   return ThemeData(
     colorScheme: scheme,
+    fontFamily: fontFamily,
   );
 }
