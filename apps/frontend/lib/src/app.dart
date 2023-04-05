@@ -14,8 +14,14 @@ class App extends HookConsumerWidget {
         return MaterialApp.router(
           // onGenerateTitle: (context) => L10n.of(context)!.pokemon,
           title: 'NITO',
-          theme: lightTheme(lightDynamic),
-          darkTheme: darkTheme(darkDynamic),
+          theme: lightTheme(
+            lightDynamic: lightDynamic,
+            fontFamily: 'NotoSansJP',
+          ),
+          darkTheme: darkTheme(
+            darkDynamic: darkDynamic,
+            fontFamily: 'NotoSansJP',
+          ),
           themeMode: ThemeMode.system,
           routerConfig: ref.watch(routerProvider),
           // localizationsDelegates: L10n.localizationsDelegates,
