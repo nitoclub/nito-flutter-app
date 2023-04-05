@@ -26,9 +26,9 @@ mixin _$NetworkEntrance {
   @JsonKey(name: NetworkEntranceFields.approvedAt)
   String? get approvedAt => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkEntranceFields.createdAt)
-  String? get createdAt => throw _privateConstructorUsedError;
+  String get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkEntranceFields.updatedAt)
-  String? get updatedAt => throw _privateConstructorUsedError;
+  String get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkEntranceFields.deletedAt)
   String? get deletedAt => throw _privateConstructorUsedError;
 
@@ -49,8 +49,8 @@ abstract class $NetworkEntranceCopyWith<$Res> {
       String nickname,
       String email,
       @JsonKey(name: NetworkEntranceFields.approvedAt) String? approvedAt,
-      @JsonKey(name: NetworkEntranceFields.createdAt) String? createdAt,
-      @JsonKey(name: NetworkEntranceFields.updatedAt) String? updatedAt,
+      @JsonKey(name: NetworkEntranceFields.createdAt) String createdAt,
+      @JsonKey(name: NetworkEntranceFields.updatedAt) String updatedAt,
       @JsonKey(name: NetworkEntranceFields.deletedAt) String? deletedAt});
 }
 
@@ -71,8 +71,8 @@ class _$NetworkEntranceCopyWithImpl<$Res, $Val extends NetworkEntrance>
     Object? nickname = null,
     Object? email = null,
     Object? approvedAt = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
     Object? deletedAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -92,14 +92,14 @@ class _$NetworkEntranceCopyWithImpl<$Res, $Val extends NetworkEntrance>
           ? _value.approvedAt
           : approvedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       deletedAt: freezed == deletedAt
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -121,8 +121,8 @@ abstract class _$$_NetworkEntranceCopyWith<$Res>
       String nickname,
       String email,
       @JsonKey(name: NetworkEntranceFields.approvedAt) String? approvedAt,
-      @JsonKey(name: NetworkEntranceFields.createdAt) String? createdAt,
-      @JsonKey(name: NetworkEntranceFields.updatedAt) String? updatedAt,
+      @JsonKey(name: NetworkEntranceFields.createdAt) String createdAt,
+      @JsonKey(name: NetworkEntranceFields.updatedAt) String updatedAt,
       @JsonKey(name: NetworkEntranceFields.deletedAt) String? deletedAt});
 }
 
@@ -141,8 +141,8 @@ class __$$_NetworkEntranceCopyWithImpl<$Res>
     Object? nickname = null,
     Object? email = null,
     Object? approvedAt = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
     Object? deletedAt = freezed,
   }) {
     return _then(_$_NetworkEntrance(
@@ -162,14 +162,14 @@ class __$$_NetworkEntranceCopyWithImpl<$Res>
           ? _value.approvedAt
           : approvedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       deletedAt: freezed == deletedAt
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -186,8 +186,8 @@ class _$_NetworkEntrance implements _NetworkEntrance {
       required this.nickname,
       required this.email,
       @JsonKey(name: NetworkEntranceFields.approvedAt) this.approvedAt,
-      @JsonKey(name: NetworkEntranceFields.createdAt) this.createdAt,
-      @JsonKey(name: NetworkEntranceFields.updatedAt) this.updatedAt,
+      @JsonKey(name: NetworkEntranceFields.createdAt) required this.createdAt,
+      @JsonKey(name: NetworkEntranceFields.updatedAt) required this.updatedAt,
       @JsonKey(name: NetworkEntranceFields.deletedAt) this.deletedAt});
 
   factory _$_NetworkEntrance.fromJson(Map<String, dynamic> json) =>
@@ -204,10 +204,10 @@ class _$_NetworkEntrance implements _NetworkEntrance {
   final String? approvedAt;
   @override
   @JsonKey(name: NetworkEntranceFields.createdAt)
-  final String? createdAt;
+  final String createdAt;
   @override
   @JsonKey(name: NetworkEntranceFields.updatedAt)
-  final String? updatedAt;
+  final String updatedAt;
   @override
   @JsonKey(name: NetworkEntranceFields.deletedAt)
   final String? deletedAt;
@@ -263,9 +263,9 @@ abstract class _NetworkEntrance implements NetworkEntrance {
       @JsonKey(name: NetworkEntranceFields.approvedAt)
           final String? approvedAt,
       @JsonKey(name: NetworkEntranceFields.createdAt)
-          final String? createdAt,
+          required final String createdAt,
       @JsonKey(name: NetworkEntranceFields.updatedAt)
-          final String? updatedAt,
+          required final String updatedAt,
       @JsonKey(name: NetworkEntranceFields.deletedAt)
           final String? deletedAt}) = _$_NetworkEntrance;
 
@@ -283,10 +283,10 @@ abstract class _NetworkEntrance implements NetworkEntrance {
   String? get approvedAt;
   @override
   @JsonKey(name: NetworkEntranceFields.createdAt)
-  String? get createdAt;
+  String get createdAt;
   @override
   @JsonKey(name: NetworkEntranceFields.updatedAt)
-  String? get updatedAt;
+  String get updatedAt;
   @override
   @JsonKey(name: NetworkEntranceFields.deletedAt)
   String? get deletedAt;

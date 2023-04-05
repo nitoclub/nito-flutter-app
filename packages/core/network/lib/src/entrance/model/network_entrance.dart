@@ -10,8 +10,8 @@ class NetworkEntrance with _$NetworkEntrance {
     required String nickname,
     required String email,
     @JsonKey(name: NetworkEntranceFields.approvedAt) String? approvedAt,
-    @JsonKey(name: NetworkEntranceFields.createdAt) String? createdAt,
-    @JsonKey(name: NetworkEntranceFields.updatedAt) String? updatedAt,
+    @JsonKey(name: NetworkEntranceFields.createdAt) required String createdAt,
+    @JsonKey(name: NetworkEntranceFields.updatedAt) required String updatedAt,
     @JsonKey(name: NetworkEntranceFields.deletedAt) String? deletedAt,
   }) = _NetworkEntrance;
 

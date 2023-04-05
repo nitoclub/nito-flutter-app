@@ -12,8 +12,8 @@ _$_NetworkEntrance _$$_NetworkEntranceFromJson(Map<String, dynamic> json) =>
       nickname: json['nickname'] as String,
       email: json['email'] as String,
       approvedAt: json['approved_at'] as String?,
-      createdAt: json['created_at'] as String?,
-      updatedAt: json['updated_at'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       deletedAt: json['deleted_at'] as String?,
     );
 
