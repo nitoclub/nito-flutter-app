@@ -1,5 +1,7 @@
+import 'package:core_model/core_model.dart';
+import 'package:core_styleguide/core_styleguide.dart';
+import 'package:core_ui/core_ui.dart';
 import 'package:feature_schedule/src/provider/scheduleListProvider.dart';
-import 'package:feature_schedule/src/ui/schedule_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -29,22 +31,24 @@ class ScheduleList extends HookConsumerWidget {
       },
       data: (schedule) {
         // FIXME(Daichi): 引っ張り更新を可能にする
-        return Padding(
-          padding: const EdgeInsets.all(10),
-          child: ListView.separated(
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: schedule.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ScheduleCard(
-                dateString: schedule[index].date,
-                isFuture: DateTime.parse(schedule[index].date)
-                    .isAfter(DateTime.now()),
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return const SizedBox(height: 10);
-            },
-          ),
+        return ListView.separated(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(Space.x2),
+          itemCount: schedule.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ScheduleCard(
+              schedule: schedule[index],
+              onSchedulePressed: (Schedule schedule) {
+                // TODO: 詳細画面へ遷移する
+              },
+              onParticipatePressed: (Schedule schedule) {
+                // TODO: 参加するボタンを押したときの処理を書く
+              },
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const SizedBox(height: Space.x2);
+          },
         );
       },
     );
