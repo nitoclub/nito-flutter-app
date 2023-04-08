@@ -24,6 +24,8 @@ dependencies:
     path: ../../packages/core/data
   core_styleguide:
     path: ../../packages/core/styleguide
+  core_ui:
+    path: ../../packages/core/ui
   feature_top:
     path: ../../packages/feature/top
   feature_auth:
