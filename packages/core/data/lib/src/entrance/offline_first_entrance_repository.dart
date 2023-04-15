@@ -4,15 +4,15 @@ import 'package:core_network/core_network.dart';
 final offlineFirstEntranceRepositoryProvider =
     entranceRepositoryProvider.overrideWith(
   (ref) => OfflineFirstEntranceRepository(
-    participationApi: ref.watch(entranceApiProvider),
+    entranceApi: ref.watch(entranceApiProvider),
   ),
 );
 
 /// 仮登録のデータ操作リポジトリ
 class OfflineFirstEntranceRepository implements EntranceRepository {
   OfflineFirstEntranceRepository({
-    required EntranceApi participationApi,
-  }) : _participationApi = participationApi;
+    required EntranceApi entranceApi,
+  }) : _participationApi = entranceApi;
 
   final EntranceApi _participationApi;
 
