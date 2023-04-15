@@ -12,12 +12,12 @@ final offlineFirstEntranceRepositoryProvider =
 class OfflineFirstEntranceRepository implements EntranceRepository {
   OfflineFirstEntranceRepository({
     required EntranceApi entranceApi,
-  }) : _participationApi = entranceApi;
+  }) : _entranceApi = entranceApi;
 
-  final EntranceApi _participationApi;
+  final EntranceApi _entranceApi;
 
   @override
   Future<void> register(String nickname, String email) async {
-    return await _participationApi.register(nickname, email);
+    return await _entranceApi.register(nickname, email);
   }
 }
