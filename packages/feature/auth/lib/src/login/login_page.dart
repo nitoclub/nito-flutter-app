@@ -53,21 +53,24 @@ class _StatelessLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('サインイン')),
-      body: ListView(
+      body: Padding(
         padding: const EdgeInsets.all(Space.x3),
-        children: [
-          const Text('NITO はログインが必要です。'),
-          const NitoGap.heightX3(),
-          LoginForm(
-            isSuccessSignIn: isSuccessSignIn,
-            isSignInProcessing: isSignInProcessing,
-            emailController: emailController,
-            passwordController: passwordController,
-            onPasswordFieldSubmitted: onPasswordFieldSubmitted,
-            onSignInButtonPressed: onSignInButtonPressed,
-            onLoginSucceeded: onLoginSucceeded,
-          ),
-        ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('NITO はログインが必要です。'),
+            const NitoGap.heightX3(),
+            LoginForm(
+              isSuccessSignIn: isSuccessSignIn,
+              isSignInProcessing: isSignInProcessing,
+              emailController: emailController,
+              passwordController: passwordController,
+              onPasswordFieldSubmitted: onPasswordFieldSubmitted,
+              onSignInButtonPressed: onSignInButtonPressed,
+              contextGo: contextGo,
+            ),
+          ],
+        ),
       ),
     );
   }
