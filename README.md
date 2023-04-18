@@ -1,4 +1,5 @@
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/invertase/melos)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7144cf7d95ad890dbe19/maintainability)](https://codeclimate.com/github/2rabs/nito-app/maintainability)
 [![Deploy to Firebase Hosting on merge](https://github.com/2rabs/nito-app/actions/workflows/prod-firebase-hosting-deploy.yml/badge.svg)](https://github.com/2rabs/nito-app/actions/workflows/prod-firebase-hosting-deploy.yml)
 
 # NITO
