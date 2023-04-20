@@ -69,6 +69,11 @@ class _StatelessLoginPage extends StatelessWidget {
               onSignInButtonPressed: onSignInButtonPressed,
               contextGo: contextGo,
             ),
+            const NitoGap.heightX3(),
+            AlignRightTextBottom(
+              text: '仲間入りしたい方はこちら！',
+              onPressed: onTextButtonPressed,
+            ),
           ],
         ),
       ),
