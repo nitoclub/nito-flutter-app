@@ -19,6 +19,9 @@ class RootRoute extends GoRouteData {
         onSettingsActionPressed: (BuildContext context) {
           context.push('/settings');
         },
+        onScheduleListButtonPressed: () {
+          const ScheduleListRoute().push(context);
+        },
       );
 }
 
@@ -44,12 +47,12 @@ class SettingsRoute extends GoRouteData {
   build(BuildContext context, GoRouterState state) => const SettingsScreen();
 }
 
-/// スケジュールページルート
-@TypedGoRoute<ScheduleRoute>(
-  path: '/schedule',
+/// スケジュール一覧ページルート
+@TypedGoRoute<ScheduleListRoute>(
+  path: '/schedules',
 )
-class ScheduleRoute extends GoRouteData {
-  const ScheduleRoute();
+class ScheduleListRoute extends GoRouteData {
+  const ScheduleListRoute();
 
   @override
   build(BuildContext context, GoRouterState state) => const SchedulePage();
