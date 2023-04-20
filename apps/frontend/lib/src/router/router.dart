@@ -16,7 +16,7 @@ class RootRoute extends GoRouteData {
 
   @override
   build(BuildContext context, GoRouterState state) => TopPage(
-        onSettingsActionPressed: (BuildContext context) {
+        onSettingsActionPressed: () {
           const SettingsRoute().push(context);
         },
         onScheduleListButtonPressed: () {
