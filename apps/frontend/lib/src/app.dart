@@ -2,8 +2,8 @@ import 'package:core_styleguide/core_styleguide.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend/src/router/router_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:frontend/src/settings/router_settings.dart';
 
 class App extends HookConsumerWidget {
   const App({Key? key}) : super(key: key);

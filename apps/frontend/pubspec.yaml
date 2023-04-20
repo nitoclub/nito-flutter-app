@@ -42,12 +42,16 @@ dependencies:
   go_router: ^6.0.0
   js: ^0.6.5
   dynamic_color: ^1.6.2
+  riverpod_annotation: ^2.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  build_runner: ^2.3.3
+  go_router_builder: ^1.2.1
+  riverpod_generator: ^2.1.6
 
 flutter:
   uses-material-design: true
