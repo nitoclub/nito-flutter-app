@@ -33,7 +33,11 @@ class LoginRoute extends GoRouteData {
   const LoginRoute();
 
   @override
-  build(BuildContext context, GoRouterState state) => const LoginPage();
+  build(BuildContext context, GoRouterState state) => LoginPage(
+        onLoginSucceeded: () {
+          const RootRoute().push(context);
+        },
+      );
 }
 
 /// セッティングページルート
