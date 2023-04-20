@@ -10,7 +10,7 @@ List<RouteBase> get $appRoutes => [
       $rootRoute,
       $loginRoute,
       $settingsRoute,
-      $scheduleRoute,
+      $scheduleListRoute,
     ];
 
 RouteBase get $rootRoute => GoRouteData.$route(
@@ -73,16 +73,17 @@ extension $SettingsRouteExtension on SettingsRoute {
       context.pushReplacement(location);
 }
 
-RouteBase get $scheduleRoute => GoRouteData.$route(
-      path: '/schedule',
-      factory: $ScheduleRouteExtension._fromState,
+RouteBase get $scheduleListRoute => GoRouteData.$route(
+      path: '/schedules',
+      factory: $ScheduleListRouteExtension._fromState,
     );
 
-extension $ScheduleRouteExtension on ScheduleRoute {
-  static ScheduleRoute _fromState(GoRouterState state) => const ScheduleRoute();
+extension $ScheduleListRouteExtension on ScheduleListRoute {
+  static ScheduleListRoute _fromState(GoRouterState state) =>
+      const ScheduleListRoute();
 
   String get location => GoRouteData.$location(
-        '/schedule',
+        '/schedules',
       );
 
   void go(BuildContext context) => context.go(location);
