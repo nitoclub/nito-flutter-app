@@ -19,6 +19,9 @@ class RootRoute extends GoRouteData {
         onSettingsActionPressed: (BuildContext context) {
           context.push('/settings');
         },
+        onScheduleListButtonPressed: () {
+          const ScheduleListRoute().push(context);
+        },
       );
 }
 

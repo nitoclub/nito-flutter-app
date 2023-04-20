@@ -18,6 +18,7 @@ class TopPageTest extends HookConsumerWidget {
     return MaterialApp(
       home: TopPage(
         onSettingsActionPressed: (BuildContext context) {},
+        onScheduleListButtonPressed: () {},
       ),
     );
   }

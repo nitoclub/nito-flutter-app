@@ -2,11 +2,15 @@ import 'package:feature_top/src/ui/top_page_body.dart';
 import 'package:flutter/material.dart';
 
 class TopPageForMobile extends StatelessWidget {
-  const TopPageForMobile(
-      {super.key, required VoidCallback onSettingsActionPressed})
-      : _onSettingsActionPressed = onSettingsActionPressed;
+  const TopPageForMobile({
+    super.key,
+    required VoidCallback onSettingsActionPressed,
+    required VoidCallback onScheduleListButtonPressed,
+  })  : _onSettingsActionPressed = onSettingsActionPressed,
+        _onScheduleListButtonPressed = onScheduleListButtonPressed;
 
   final VoidCallback _onSettingsActionPressed;
+  final VoidCallback _onScheduleListButtonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,9 @@ class TopPageForMobile extends StatelessWidget {
               icon: const Icon(Icons.settings))
         ],
       ),
-      body: const TopPageBody(),
+      body: TopPageBody(
+        onScheduleListButtonPressed: _onScheduleListButtonPressed,
+      ),
     );
   }
 }
