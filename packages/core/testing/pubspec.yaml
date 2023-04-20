@@ -10,12 +10,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core_common:
-    path: ../common
-
-dev_dependencies:
   flutter_test:
     sdk: flutter
+  core_common:
+    path: ../common
+  core_data:
+    path: ../data
+  core_domain:
+    path: ../domain
+  core_model:
+    path: ../model
+
+dev_dependencies:
   flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
