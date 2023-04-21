@@ -16,8 +16,8 @@ class RootRoute extends GoRouteData {
 
   @override
   build(BuildContext context, GoRouterState state) => TopPage(
-        onSettingsActionPressed: (BuildContext context) {
-          context.push('/settings');
+        onSettingsActionPressed: () {
+          const SettingsRoute().push(context);
         },
         onScheduleListButtonPressed: () {
           const ScheduleListRoute().push(context);
@@ -33,7 +33,11 @@ class LoginRoute extends GoRouteData {
   const LoginRoute();
 
   @override
-  build(BuildContext context, GoRouterState state) => const LoginPage();
+  build(BuildContext context, GoRouterState state) => LoginPage(
+        onLoginSucceeded: () {
+          const RootRoute().push(context);
+        },
+      );
 }
 
 /// セッティングページルート

@@ -10,7 +10,7 @@ class LoginForm extends StatelessWidget {
     required this.passwordController,
     required this.onPasswordFieldSubmitted,
     required this.onSignInButtonPressed,
-    required this.contextGo,
+    required this.onLoginSucceeded,
   });
 
   final bool isSuccessSignIn;
@@ -19,7 +19,7 @@ class LoginForm extends StatelessWidget {
   final TextEditingController passwordController;
   final Future<void> Function() onPasswordFieldSubmitted;
   final Future<void> Function() onSignInButtonPressed;
-  final VoidCallback contextGo;
+  final VoidCallback onLoginSucceeded;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class LoginForm extends StatelessWidget {
           textInputAction: TextInputAction.done,
           onFieldSubmitted: (String? value) async {
             await onPasswordFieldSubmitted();
-            contextGo();
+            onLoginSucceeded();
           },
         ),
 
@@ -63,7 +63,7 @@ class LoginForm extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () async {
               await onSignInButtonPressed();
-              contextGo();
+              onLoginSucceeded();
             },
             child: Text(isSignInProcessing ? 'サインイン中です…' : 'サインイン'),
           ),

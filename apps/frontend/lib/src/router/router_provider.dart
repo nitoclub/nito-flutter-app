@@ -16,12 +16,12 @@ GoRouter router(RouterRef ref) {
       return ref.watch(userProvider) != null ||
               (ref.watch(isSignedInProvider).value ?? false)
           ? null
-          : '/login';
+          : const LoginRoute().location;
     },
   );
 }
 
-const _ignoreRedirect = <String>{
-  '/login',
+final _ignoreRedirect = <String>{
+  const LoginRoute().location,
   '/entrance',
 };
