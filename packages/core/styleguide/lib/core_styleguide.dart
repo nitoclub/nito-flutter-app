@@ -13,3 +13,6 @@ export 'src/icon/nito_icons.dart';
 export 'src/theme/light_theme.dart';
 export 'src/theme/dark_theme.dart';
 export 'src/theme/space.dart';
+
+/// DateFormatter
+export 'src/date_formatter.dart';
