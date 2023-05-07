@@ -10,7 +10,8 @@ class NetworkSchedule with _$NetworkSchedule {
     @JsonKey(name: NetworkScheduleFields.createdAt) String? createdAt,
     @JsonKey(name: NetworkScheduleFields.updatedAt) String? updatedAt,
     @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt,
-    @JsonKey(name: NetworkScheduleFields.scheduledAt) required String scheduledAt,
+    @JsonKey(name: NetworkScheduleFields.scheduledAt)
+        required String scheduledAt,
   }) = _NetworkSchedule;
 
   factory NetworkSchedule.fromJson(Map<String, dynamic> json) =>
