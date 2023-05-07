@@ -5,9 +5,12 @@ import 'package:flutter_test/flutter_test.dart';
 /// テスト用のスケジュールリポジトリ
 class TestScheduleRepository extends Fake implements ScheduleRepository {
   final List<Schedule> _schedules = [
-    Schedule(id: 1, scheduledAt: DateTime(2022, 4, 15, 10, 30), isFinished: true),
-    Schedule(id: 2, scheduledAt: DateTime(2022, 4, 16, 10, 30), isFinished: false),
-    Schedule(id: 3, scheduledAt: DateTime(2022, 4, 17, 10, 30), isFinished: false),
+    Schedule(
+        id: 1, scheduledAt: DateTime(2022, 4, 15, 10, 30), isFinished: true),
+    Schedule(
+        id: 2, scheduledAt: DateTime(2022, 4, 16, 10, 30), isFinished: false),
+    Schedule(
+        id: 3, scheduledAt: DateTime(2022, 4, 17, 10, 30), isFinished: false),
   ];
 
   @override
