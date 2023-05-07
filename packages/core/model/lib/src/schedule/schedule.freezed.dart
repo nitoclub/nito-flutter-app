@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Schedule {
   int get id => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
+  DateTime get scheduledAt => throw _privateConstructorUsedError;
   bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $ScheduleCopyWith<$Res> {
   factory $ScheduleCopyWith(Schedule value, $Res Function(Schedule) then) =
       _$ScheduleCopyWithImpl<$Res, Schedule>;
   @useResult
-  $Res call({int id, String date, bool isFinished});
+  $Res call({int id, DateTime scheduledAt, bool isFinished});
 }
 
 /// @nodoc
@@ -47,7 +47,7 @@ class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
   @override
   $Res call({
     Object? id = null,
-    Object? date = null,
+    Object? scheduledAt = null,
     Object? isFinished = null,
   }) {
     return _then(_value.copyWith(
@@ -55,10 +55,10 @@ class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
+      scheduledAt: null == scheduledAt
+          ? _value.scheduledAt
+          : scheduledAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isFinished: null == isFinished
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,7 @@ abstract class _$$_ScheduleCopyWith<$Res> implements $ScheduleCopyWith<$Res> {
       __$$_ScheduleCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String date, bool isFinished});
+  $Res call({int id, DateTime scheduledAt, bool isFinished});
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class __$$_ScheduleCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? date = null,
+    Object? scheduledAt = null,
     Object? isFinished = null,
   }) {
     return _then(_$_Schedule(
@@ -97,10 +97,10 @@ class __$$_ScheduleCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
+      scheduledAt: null == scheduledAt
+          ? _value.scheduledAt
+          : scheduledAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isFinished: null == isFinished
           ? _value.isFinished
           : isFinished // ignore: cast_nullable_to_non_nullable
@@ -113,18 +113,18 @@ class __$$_ScheduleCopyWithImpl<$Res>
 
 class _$_Schedule implements _Schedule {
   const _$_Schedule(
-      {required this.id, required this.date, required this.isFinished});
+      {required this.id, required this.scheduledAt, required this.isFinished});
 
   @override
   final int id;
   @override
-  final String date;
+  final DateTime scheduledAt;
   @override
   final bool isFinished;
 
   @override
   String toString() {
-    return 'Schedule(id: $id, date: $date, isFinished: $isFinished)';
+    return 'Schedule(id: $id, scheduledAt: $scheduledAt, isFinished: $isFinished)';
   }
 
   @override
@@ -133,13 +133,14 @@ class _$_Schedule implements _Schedule {
         (other.runtimeType == runtimeType &&
             other is _$_Schedule &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.date, date) || other.date == date) &&
+            (identical(other.scheduledAt, scheduledAt) ||
+                other.scheduledAt == scheduledAt) &&
             (identical(other.isFinished, isFinished) ||
                 other.isFinished == isFinished));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, date, isFinished);
+  int get hashCode => Object.hash(runtimeType, id, scheduledAt, isFinished);
 
   @JsonKey(ignore: true)
   @override
@@ -151,13 +152,13 @@ class _$_Schedule implements _Schedule {
 abstract class _Schedule implements Schedule {
   const factory _Schedule(
       {required final int id,
-      required final String date,
+      required final DateTime scheduledAt,
       required final bool isFinished}) = _$_Schedule;
 
   @override
   int get id;
   @override
-  String get date;
+  DateTime get scheduledAt;
   @override
   bool get isFinished;
   @override

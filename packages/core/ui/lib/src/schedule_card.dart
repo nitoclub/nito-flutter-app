@@ -2,19 +2,23 @@ import 'package:core_model/core_model.dart';
 import 'package:core_styleguide/core_styleguide.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 /// スケジュールのカードアイテム
 class ScheduleCard extends StatelessWidget {
   const ScheduleCard({
     super.key,
     required Schedule schedule,
+    required DateFormat datetimeFormatter,
     required void Function(Schedule) onSchedulePressed,
     required void Function(Schedule) onParticipatePressed,
   })  : _schedule = schedule,
+        _datetimeFormatter = datetimeFormatter,
         _onSchedulePressed = onSchedulePressed,
         _onParticipatePressed = onParticipatePressed;
 
   final Schedule _schedule;
+  final DateFormat _datetimeFormatter;
   final void Function(Schedule) _onSchedulePressed;
   final void Function(Schedule) _onParticipatePressed;
 
@@ -37,7 +41,7 @@ class ScheduleCard extends StatelessWidget {
                     const Icon(Icons.schedule),
                     const SizedBox(width: Space.x2),
                     Text(
-                      _schedule.date,
+                      _datetimeFormatter.format(_schedule.scheduledAt),
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ],

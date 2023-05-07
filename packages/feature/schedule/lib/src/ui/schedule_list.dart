@@ -11,6 +11,7 @@ class ScheduleList extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncScheduleList = ref.watch(scheduleListProvider);
+    final datetimeFormatter = ref.read(defaultDateTimeFormatProvider);
 
     return asyncScheduleList.when(
       loading: () => const Center(child: CircularProgressIndicator()),
@@ -38,6 +39,7 @@ class ScheduleList extends HookConsumerWidget {
           itemBuilder: (BuildContext context, int index) {
             return ScheduleCard(
               schedule: schedule[index],
+              datetimeFormatter: datetimeFormatter,
               onSchedulePressed: (Schedule schedule) {
                 // TODO: 詳細画面へ遷移する
               },

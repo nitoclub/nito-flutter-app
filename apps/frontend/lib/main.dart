@@ -3,6 +3,8 @@ import 'package:core_network/core_network.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:frontend/src/app.dart';
@@ -27,6 +29,12 @@ void main() async {
     url: dotenv.env['SUPABASE_URL']!,
     anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
+
+  // 日本のロケールデータをロード
+  await initializeDateFormatting('ja_JP', null);
+
+  // デフォルトのロケールを日本に設定
+  Intl.defaultLocale = 'ja_JP';
 
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the

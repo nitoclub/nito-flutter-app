@@ -21,13 +21,14 @@ NetworkSchedule _$NetworkScheduleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NetworkSchedule {
   int get id => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkScheduleFields.createdAt)
   String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkScheduleFields.updatedAt)
   String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: NetworkScheduleFields.deletedAt)
   String? get deletedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: NetworkScheduleFields.scheduledAt)
+  String get scheduledAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,10 +44,10 @@ abstract class $NetworkScheduleCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String date,
       @JsonKey(name: NetworkScheduleFields.createdAt) String? createdAt,
       @JsonKey(name: NetworkScheduleFields.updatedAt) String? updatedAt,
-      @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt});
+      @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt,
+      @JsonKey(name: NetworkScheduleFields.scheduledAt) String scheduledAt});
 }
 
 /// @nodoc
@@ -63,20 +64,16 @@ class _$NetworkScheduleCopyWithImpl<$Res, $Val extends NetworkSchedule>
   @override
   $Res call({
     Object? id = null,
-    Object? date = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? deletedAt = freezed,
+    Object? scheduledAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -89,6 +86,10 @@ class _$NetworkScheduleCopyWithImpl<$Res, $Val extends NetworkSchedule>
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
               as String?,
+      scheduledAt: null == scheduledAt
+          ? _value.scheduledAt
+          : scheduledAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -103,10 +104,10 @@ abstract class _$$_NetworkScheduleCopyWith<$Res>
   @useResult
   $Res call(
       {int id,
-      String date,
       @JsonKey(name: NetworkScheduleFields.createdAt) String? createdAt,
       @JsonKey(name: NetworkScheduleFields.updatedAt) String? updatedAt,
-      @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt});
+      @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt,
+      @JsonKey(name: NetworkScheduleFields.scheduledAt) String scheduledAt});
 }
 
 /// @nodoc
@@ -121,20 +122,16 @@ class __$$_NetworkScheduleCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? date = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? deletedAt = freezed,
+    Object? scheduledAt = null,
   }) {
     return _then(_$_NetworkSchedule(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -147,6 +144,10 @@ class __$$_NetworkScheduleCopyWithImpl<$Res>
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
               as String?,
+      scheduledAt: null == scheduledAt
+          ? _value.scheduledAt
+          : scheduledAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -156,18 +157,20 @@ class __$$_NetworkScheduleCopyWithImpl<$Res>
 class _$_NetworkSchedule implements _NetworkSchedule {
   const _$_NetworkSchedule(
       {required this.id,
-      required this.date,
-      @JsonKey(name: NetworkScheduleFields.createdAt) this.createdAt,
-      @JsonKey(name: NetworkScheduleFields.updatedAt) this.updatedAt,
-      @JsonKey(name: NetworkScheduleFields.deletedAt) this.deletedAt});
+      @JsonKey(name: NetworkScheduleFields.createdAt)
+          this.createdAt,
+      @JsonKey(name: NetworkScheduleFields.updatedAt)
+          this.updatedAt,
+      @JsonKey(name: NetworkScheduleFields.deletedAt)
+          this.deletedAt,
+      @JsonKey(name: NetworkScheduleFields.scheduledAt)
+          required this.scheduledAt});
 
   factory _$_NetworkSchedule.fromJson(Map<String, dynamic> json) =>
       _$$_NetworkScheduleFromJson(json);
 
   @override
   final int id;
-  @override
-  final String date;
   @override
   @JsonKey(name: NetworkScheduleFields.createdAt)
   final String? createdAt;
@@ -177,10 +180,13 @@ class _$_NetworkSchedule implements _NetworkSchedule {
   @override
   @JsonKey(name: NetworkScheduleFields.deletedAt)
   final String? deletedAt;
+  @override
+  @JsonKey(name: NetworkScheduleFields.scheduledAt)
+  final String scheduledAt;
 
   @override
   String toString() {
-    return 'NetworkSchedule(id: $id, date: $date, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+    return 'NetworkSchedule(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, scheduledAt: $scheduledAt)';
   }
 
   @override
@@ -189,19 +195,20 @@ class _$_NetworkSchedule implements _NetworkSchedule {
         (other.runtimeType == runtimeType &&
             other is _$_NetworkSchedule &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.date, date) || other.date == date) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.deletedAt, deletedAt) ||
-                other.deletedAt == deletedAt));
+                other.deletedAt == deletedAt) &&
+            (identical(other.scheduledAt, scheduledAt) ||
+                other.scheduledAt == scheduledAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, date, createdAt, updatedAt, deletedAt);
+  int get hashCode => Object.hash(
+      runtimeType, id, createdAt, updatedAt, deletedAt, scheduledAt);
 
   @JsonKey(ignore: true)
   @override
@@ -220,21 +227,20 @@ class _$_NetworkSchedule implements _NetworkSchedule {
 abstract class _NetworkSchedule implements NetworkSchedule {
   const factory _NetworkSchedule(
       {required final int id,
-      required final String date,
       @JsonKey(name: NetworkScheduleFields.createdAt)
           final String? createdAt,
       @JsonKey(name: NetworkScheduleFields.updatedAt)
           final String? updatedAt,
       @JsonKey(name: NetworkScheduleFields.deletedAt)
-          final String? deletedAt}) = _$_NetworkSchedule;
+          final String? deletedAt,
+      @JsonKey(name: NetworkScheduleFields.scheduledAt)
+          required final String scheduledAt}) = _$_NetworkSchedule;
 
   factory _NetworkSchedule.fromJson(Map<String, dynamic> json) =
       _$_NetworkSchedule.fromJson;
 
   @override
   int get id;
-  @override
-  String get date;
   @override
   @JsonKey(name: NetworkScheduleFields.createdAt)
   String? get createdAt;
@@ -244,6 +250,9 @@ abstract class _NetworkSchedule implements NetworkSchedule {
   @override
   @JsonKey(name: NetworkScheduleFields.deletedAt)
   String? get deletedAt;
+  @override
+  @JsonKey(name: NetworkScheduleFields.scheduledAt)
+  String get scheduledAt;
   @override
   @JsonKey(ignore: true)
   _$$_NetworkScheduleCopyWith<_$_NetworkSchedule> get copyWith =>

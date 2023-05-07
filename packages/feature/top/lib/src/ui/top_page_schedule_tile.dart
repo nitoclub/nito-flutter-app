@@ -1,3 +1,4 @@
+import 'package:core_styleguide/core_styleguide.dart';
 import 'package:feature_top/src/provider/recent_schedule_provider.dart';
 import 'package:feature_top/src/ui/top_schedule_dialog.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class TopPageScheduleTile extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncSchedule = ref.watch(recentScheduleProvider);
+    final datetimeFormatter = ref.read(defaultDateTimeFormatProvider);
 
     return asyncSchedule.when(
       loading: () => const Center(
@@ -28,7 +30,9 @@ class TopPageScheduleTile extends HookConsumerWidget {
         return ListTile(
           leading: const Icon(Icons.schedule),
           title: Text(
-            schedule?.date ?? '',
+            schedule != null
+                ? datetimeFormatter.format(schedule.scheduledAt)
+                : '',
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -40,7 +44,9 @@ class TopPageScheduleTile extends HookConsumerWidget {
               context: context,
               builder: (_) {
                 return TopScheduleDialog(
-                  dateString: schedule?.date ?? '',
+                  dateString: schedule != null
+                      ? datetimeFormatter.format(schedule.scheduledAt)
+                      : '',
                   scheduleId: schedule?.id ?? 0,
                 );
               },
