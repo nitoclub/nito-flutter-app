@@ -22,7 +22,7 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
     return networkSchedule?.let(
       (it) => Schedule(
         id: it.id,
-        date: it.date,
+        scheduledAt: DateTime.parse(it.scheduledAt),
         isFinished: false,
       ),
     );
@@ -37,8 +37,8 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
         .map(
           (it) => Schedule(
             id: it.id,
-            date: it.date,
-            isFinished: DateTime.parse(it.date).isBefore(now),
+            scheduledAt: DateTime.parse(it.scheduledAt).toLocal(),
+            isFinished: DateTime.parse(it.scheduledAt).isBefore(now),
           ),
         )
         .toList();
@@ -51,7 +51,7 @@ class OfflineFirstScheduleRepository implements ScheduleRepository {
         .map(
           (e) => Schedule(
             id: e.id,
-            date: e.date,
+            scheduledAt: DateTime.parse(e.scheduledAt),
             isFinished: false,
           ),
         )

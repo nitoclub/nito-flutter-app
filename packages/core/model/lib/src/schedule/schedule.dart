@@ -6,7 +6,7 @@ part 'schedule.freezed.dart';
 class Schedule with _$Schedule {
   const factory Schedule({
     required int id,
-    required String date,
+    required DateTime scheduledAt,
     required bool isFinished,
   }) = _Schedule;
 }

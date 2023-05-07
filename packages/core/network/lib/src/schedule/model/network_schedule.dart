@@ -7,10 +7,10 @@ part 'network_schedule.g.dart';
 class NetworkSchedule with _$NetworkSchedule {
   const factory NetworkSchedule({
     required int id,
-    required String date,
     @JsonKey(name: NetworkScheduleFields.createdAt) String? createdAt,
     @JsonKey(name: NetworkScheduleFields.updatedAt) String? updatedAt,
     @JsonKey(name: NetworkScheduleFields.deletedAt) String? deletedAt,
+    @JsonKey(name: NetworkScheduleFields.scheduledAt) required String scheduledAt,
   }) = _NetworkSchedule;
 
   factory NetworkSchedule.fromJson(Map<String, dynamic> json) =>
@@ -19,8 +19,8 @@ class NetworkSchedule with _$NetworkSchedule {
 
 mixin NetworkScheduleFields {
   static const id = 'id';
-  static const date = 'date';
   static const createdAt = 'created_at';
   static const updatedAt = 'updated_at';
   static const deletedAt = 'deleted_at';
+  static const scheduledAt = 'scheduled_at';
 }

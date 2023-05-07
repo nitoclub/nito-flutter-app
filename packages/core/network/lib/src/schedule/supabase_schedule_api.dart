@@ -24,8 +24,8 @@ class SupabaseScheduleApi implements ScheduleApi {
         .from(_table)
         .select('*')
         .is_(NetworkScheduleFields.deletedAt, null)
-        .gte(NetworkScheduleFields.date, DateTime.now())
-        .order(NetworkScheduleFields.date, ascending: true)
+        .gte(NetworkScheduleFields.scheduledAt, DateTime.now())
+        .order(NetworkScheduleFields.scheduledAt, ascending: true)
         .limit(1)
         .maybeSingle();
     return data?.let(NetworkSchedule.fromJson);
@@ -37,7 +37,7 @@ class SupabaseScheduleApi implements ScheduleApi {
         .from(_table)
         .select('*')
         .is_(NetworkScheduleFields.deletedAt, null)
-        .order(NetworkScheduleFields.date)
+        .order(NetworkScheduleFields.scheduledAt)
         .limit(30);
     final castedList = data as List<dynamic>;
     return castedList.map((e) => NetworkSchedule.fromJson(e)).toList();
@@ -49,8 +49,8 @@ class SupabaseScheduleApi implements ScheduleApi {
         .from(_table)
         .select('*')
         .is_(NetworkScheduleFields.deletedAt, null)
-        .gte(NetworkScheduleFields.date, DateTime.now())
-        .order(NetworkScheduleFields.date, ascending: true);
+        .gte(NetworkScheduleFields.scheduledAt, DateTime.now())
+        .order(NetworkScheduleFields.scheduledAt, ascending: true);
     final castedList = data as List<dynamic>;
     return castedList.map((e) => NetworkSchedule.fromJson(e)).toList();
   }

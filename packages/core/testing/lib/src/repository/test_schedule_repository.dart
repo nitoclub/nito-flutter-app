@@ -5,9 +5,9 @@ import 'package:flutter_test/flutter_test.dart';
 /// テスト用のスケジュールリポジトリ
 class TestScheduleRepository extends Fake implements ScheduleRepository {
   final List<Schedule> _schedules = [
-    const Schedule(id: 1, date: '2023-04-15', isFinished: true),
-    const Schedule(id: 2, date: '2023-04-16', isFinished: false),
-    const Schedule(id: 3, date: '2023-04-17', isFinished: false),
+    Schedule(id: 1, scheduledAt: DateTime(2022, 4, 15, 10, 30), isFinished: true),
+    Schedule(id: 2, scheduledAt: DateTime(2022, 4, 16, 10, 30), isFinished: false),
+    Schedule(id: 3, scheduledAt: DateTime(2022, 4, 17, 10, 30), isFinished: false),
   ];
 
   @override
@@ -24,7 +24,7 @@ class TestScheduleRepository extends Fake implements ScheduleRepository {
   Future<List<Schedule>> fetchUpcomingSchedules() async {
     final now = DateTime.now();
     return _schedules
-        .where((schedule) => DateTime.parse(schedule.date).isAfter(now))
+        .where((schedule) => schedule.scheduledAt.isAfter(now))
         .toList();
   }
 }
