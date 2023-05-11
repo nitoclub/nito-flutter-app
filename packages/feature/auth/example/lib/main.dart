@@ -15,8 +15,11 @@ class LoginPageTest extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const MaterialApp(
-      home: LoginPage(),
+    return MaterialApp(
+      home: LoginPage(
+        onLoginSucceeded: () {},
+        goEntrancePage: () {},
+      ),
     );
   }
 }
