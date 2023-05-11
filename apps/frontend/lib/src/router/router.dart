@@ -37,6 +37,9 @@ class LoginRoute extends GoRouteData {
         onLoginSucceeded: () {
           const RootRoute().push(context);
         },
+        goEntrancePage: () {
+          const EntrancePageRoute().push(context);
+        },
       );
 }
 
@@ -60,4 +63,15 @@ class ScheduleListRoute extends GoRouteData {
 
   @override
   build(BuildContext context, GoRouterState state) => const SchedulePage();
+}
+
+/// 仮登録ページルート
+@TypedGoRoute<EntrancePageRoute>(
+  path: '/entrance',
+)
+class EntrancePageRoute extends GoRouteData {
+  const EntrancePageRoute();
+
+  @override
+  build(BuildContext context, GoRouterState state) => const EntrancePage();
 }
