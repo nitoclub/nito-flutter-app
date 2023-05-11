@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:feature_auth/src/login/component/login_form.dart';
 import 'package:feature_auth/src/login/login_page_controller.dart';
 import 'package:core_styleguide/core_styleguide.dart';
+import 'package:feature_auth/src/login/component/align_right_text_bottom.dart';
 
 class LoginPage extends HookConsumerWidget {
   const LoginPage({
     super.key,
     required VoidCallback onLoginSucceeded,
-  }) : _onLoginSucceeded = onLoginSucceeded;
+    required VoidCallback goEntrancePage,
+  })  : _onLoginSucceeded = onLoginSucceeded,
+        _goEntrancePage = goEntrancePage;
 
   final VoidCallback _onLoginSucceeded;
+  final VoidCallback _goEntrancePage;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +28,8 @@ class LoginPage extends HookConsumerWidget {
       passwordController: controller.passwordController,
       onPasswordFieldSubmitted: controller.onPasswordFieldSubmitted,
       onSignInButtonPressed: controller.onSignInButtonPressed,
-      onLoginSucceeded: () => _onLoginSucceeded,
+      onLoginSucceeded: _onLoginSucceeded,
+      goEntrancePage: _goEntrancePage,
     );
   }
 }
@@ -39,6 +43,7 @@ class _StatelessLoginPage extends StatelessWidget {
     required this.onPasswordFieldSubmitted,
     required this.onSignInButtonPressed,
     required this.onLoginSucceeded,
+    required this.goEntrancePage,
   });
 
   final bool isSuccessSignIn;
@@ -48,6 +53,7 @@ class _StatelessLoginPage extends StatelessWidget {
   final Future<void> Function() onPasswordFieldSubmitted;
   final Future<void> Function() onSignInButtonPressed;
   final VoidCallback onLoginSucceeded;
+  final VoidCallback goEntrancePage;
 
   @override
   Widget build(BuildContext context) {
@@ -67,12 +73,12 @@ class _StatelessLoginPage extends StatelessWidget {
               passwordController: passwordController,
               onPasswordFieldSubmitted: onPasswordFieldSubmitted,
               onSignInButtonPressed: onSignInButtonPressed,
-              contextGo: contextGo,
+              onLoginSucceeded: onLoginSucceeded,
             ),
             const NitoGap.heightX3(),
             AlignRightTextBottom(
               text: '仲間入りしたい方はこちら！',
-              onPressed: onTextButtonPressed,
+              onPressed: goEntrancePage,
             ),
           ],
         ),
