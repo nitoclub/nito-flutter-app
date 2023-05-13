@@ -1,3 +1,5 @@
+import 'package:core_styleguide/core_styleguide.dart';
+import 'package:feature_auth/src/entrance/ui/entrance_form.dart';
 import 'package:flutter/material.dart';
 
 class EntrancePageForMobile extends StatelessWidget {
@@ -5,10 +7,11 @@ class EntrancePageForMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('EntranceScreen'),
+    return NitoScaffold(
+      appBar: NitoAppBar(
+        title: const Text('NITOメンバー申請フォーム'),
       ),
+      body: const EntranceForm(),
     );
   }
 }
