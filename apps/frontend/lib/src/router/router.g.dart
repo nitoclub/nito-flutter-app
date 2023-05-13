@@ -11,6 +11,7 @@ List<RouteBase> get $appRoutes => [
       $loginRoute,
       $settingsRoute,
       $scheduleListRoute,
+      $entrancePageRoute,
     ];
 
 RouteBase get $rootRoute => GoRouteData.$route(
@@ -84,6 +85,27 @@ extension $ScheduleListRouteExtension on ScheduleListRoute {
 
   String get location => GoRouteData.$location(
         '/schedules',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  void push(BuildContext context) => context.push(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+}
+
+RouteBase get $entrancePageRoute => GoRouteData.$route(
+      path: '/entrance',
+      factory: $EntrancePageRouteExtension._fromState,
+    );
+
+extension $EntrancePageRouteExtension on EntrancePageRoute {
+  static EntrancePageRoute _fromState(GoRouterState state) =>
+      const EntrancePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/entrance',
       );
 
   void go(BuildContext context) => context.go(location);
