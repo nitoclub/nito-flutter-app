@@ -28,7 +28,7 @@ dependencies:
 
   plugin_platform_interface: ^2.0.2
   hooks_riverpod: ^2.0.2
-  go_router: ^6.0.0
+  go_router: ^7.0.0
   flutter_line_sdk: ^2.3.2
 
 dev_dependencies:
