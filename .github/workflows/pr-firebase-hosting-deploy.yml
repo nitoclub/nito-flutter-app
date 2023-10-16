@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 本番環境用の .env を作成
       - name: create .env
