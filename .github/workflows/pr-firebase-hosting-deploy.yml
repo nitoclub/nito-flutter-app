@@ -26,7 +26,7 @@ jobs:
         working-directory: ./apps/frontend
 
       - name: Parse Flutter version
-        uses: kuhnroyal/flutter-fvm-config-action@v1
+        uses: kuhnroyal/flutter-fvm-config-action@v2
 
       - name: Install Flutter
         uses: subosito/flutter-action@v2
